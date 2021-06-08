@@ -1,0 +1,39 @@
+{% extends '@Admin/layout.html.twig' %}
+
+{% block title %}{% trans %}Currency rate{% endtrans %}{% endblock %}
+
+{% block main %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="parse-currency">
+                <a href="{{ path('admin_currency_parsecurrency') }}" type="button" class="btn btn-warning">{% trans %}Parse Currency Rate{% endtrans %}</a>
+            </div>
+            <div class="currencies">
+                <table id="datatable-currency" class="table image-table table-bordered table-striped table-condensed table-hover">
+                    <thead>
+                        <tr>
+                            <th>{% trans %}Edit{% endtrans %}</th>
+                            <th>{% trans %}Real Currency Rate{% endtrans %}</th>
+                            <th>{% trans %}Our Currency Rate{% endtrans %}</th>
+                            <th>{% trans %}Date{% endtrans %}</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block admin_stylesheets %}
+    <link href="{{ asset('css/datatables.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('bundles/admin/css/datatable.css') }}" rel="stylesheet">
+{% endblock %}
+{% block admin_javascripts %}
+    <script type="text/javascript">
+	  window.ajaxData = '{{ path('admin_currency_ajaxcurrency') }}';
+	  window.editRoute = '{{ path('admin_currency_edit') }}';
+	  window.userLocale = '{{ app.user.locale }}';
+    </script>
+    <script src="{{ asset('js/datatables.min.js') }}"></script>
+    <script src="{{ asset('bundles/admin/js/currency/currency.js') }} " type="module"></script>
+{% endblock %}

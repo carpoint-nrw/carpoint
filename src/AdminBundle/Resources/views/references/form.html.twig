@@ -1,0 +1,25 @@
+{% extends '@Admin/layout.html.twig' %}
+
+{% block title %}{{ type|trans  ~ ' ' ~ entity|capitalize|trans }}{% endblock %}
+
+{% block main %}
+    <div class="row">
+        <div class="col-md-12">
+            <div>
+                <h2>{{ type|trans  ~ ' ' ~ entity|capitalize|trans }}</h2>
+            </div>
+            <div>
+                {{ form_start(form) }}
+                <div class="form-group col-md-12">
+                    <label for="title">{{ entity|capitalize|trans }}</label>
+                    {{ form_widget(form.title) }}
+                </div>
+                <div class="form-group col-md-12">
+                    <input class="btn btn-primary" type="submit" value="{% trans %}Create{% endtrans %}" />
+                    <a href="{{ path(indexRoute) }}" type="button" class="btn btn-primary">{% trans %}Cancel{% endtrans %}</a>
+                </div>
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

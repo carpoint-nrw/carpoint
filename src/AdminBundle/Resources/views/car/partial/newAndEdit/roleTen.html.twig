@@ -1,0 +1,283 @@
+<div class="row">
+    <div class="form-group col-md-2">
+        <label for="customer">{% trans %}Customer{% endtrans %}</label>
+        {{ form_widget(form.customer) }}
+    </div>
+    <div class="form-group col-md-1">
+        <label for="radioCode">{% trans %}Radio code{% endtrans %}</label>
+        {{ form_widget(form.radioCode) }}
+    </div>
+    <div class="form-group col-md-2">
+        <label for="carCondition">{% trans %}Car condition{% endtrans %}</label>
+        {{ form_widget(form.carCondition) }}
+    </div>
+</div>
+<div class="row">
+    <div class="form-group col-md-1">
+        <label for="brand">{% trans %}Brand{% endtrans %}</label>
+        {{ form_widget(form.brand) }}
+    </div>
+    <div class="form-group col-md-1">
+        <label for="model">{% trans %}Model{% endtrans %}</label>
+        {{ form_widget(form.model) }}
+    </div>
+    <div class="form-group col-md-2">
+        <label for="versionPolish">{% trans %}Version Polish{% endtrans %}</label>
+        {{ form_widget(form.versionPolish) }}
+    </div>
+    <div class="form-group col-md-2">
+        <label for="versionGerman">{% trans %}Version German{% endtrans %}</label>
+        {{ form_widget(form.versionGerman) }}
+    </div>
+    <div class="form-group col-md-2">
+        <label for="vinNumber">{% trans %}Vin Number{% endtrans %}</label>
+        {{ form_widget(form.vinNumber) }}
+    </div>
+    <div class="form-group col-md-2">
+        <label for="colorPolish">{% trans %}Color Polish{% endtrans %}</label>
+        {{ form_widget(form.colorPolish) }}
+    </div>
+    <div class="form-group col-md-2">
+        <label for="colorGerman">{% trans %}Color German{% endtrans %}</label>
+        {{ form_widget(form.colorGerman) }}
+    </div>
+</div>
+<div class="row">
+    <div class="form-group col-md-2">
+        <label for="carRegistration">{% trans %}Car registration{% endtrans %}</label>
+        {{ form_widget(form.carRegistration) }}
+    </div>
+    <div class="form-group col-md-1">
+        <label for="carMileage">{% trans %}Car mileage{% endtrans %}</label>
+        {{ form_widget(form.carMileage) }}
+    </div>
+    <div class="form-group col-md-2">
+        <label for="fhnr">{% trans %}Fahrzeugnummer{% endtrans %}</label>
+        {{ form_widget(form.fhnr) }}
+    </div>
+    <div class="form-group col-md-1">
+        <label for="location">{% trans %}Location{% endtrans %}</label>
+        {{ form_widget(form.location) }}
+    </div>
+</div>
+<div class="car-form-line"></div>
+<div class="row">
+    <div class="form-group col-md-3">
+        <label for="standartComplectationGerman">{% trans %}German Complectation{% endtrans %}</label>
+        {{ form_widget(form.standartComplectationGerman, {'attr': {'class': 'car-text-area'}}) }}
+    </div>
+    <div class="form-group col-md-3">
+        <label for="complectationGerman">{% trans %}Complectation German{% endtrans %}</label>
+        {{ form_widget(form.complectationGerman, {'attr': {'class': 'car-text-area'}}) }}
+    </div>
+</div>
+<div class="row">
+    <div class="form-group col-md-2">
+        <label for="ourDiscountPrice">{% trans %}Our discount price{% endtrans %}</label>
+        {{ form_widget(form.ourDiscountPrice) }}
+    </div>
+</div>
+<div class="row">
+    <div class="form-group col-md-2">
+        <label for="completed">{% trans %}Completed{% endtrans %}</label>
+        {{ form_widget(form.completed) }}
+    </div>
+    <div class="form-group col-md-2">
+        {{ form_widget(form.paid) }}
+    </div>
+    <div class="form-group col-md-2">
+        <label for="documents">{% trans %}Documents{% endtrans %}</label>
+        {{ form_widget(form.documents) }}
+    </div>
+    <div class="form-group col-md-2">
+        <label for="information">{% trans %}Information{% endtrans %}</label>
+        {{ form_widget(form.information, {'attr': {'class': 'car-text-area car-info-field'}}) }}
+    </div>
+</div>
+<div class="row">
+    <div class="form-group col-md-2">
+        <label for="downloadDate">{% trans %}Download date{% endtrans %}</label>
+        {{ form_widget(form.downloadDate) }}
+    </div>
+    <div class="form-group col-md-1">
+        <label for="shippingCost">{% trans %}Shipping cost{% endtrans %}</label>
+        {{ form_widget(form.shippingCost) }}
+    </div>
+    <div class="form-group col-md-1">
+        <label for="shippingCostType">{% trans %}PLN/EUR{% endtrans %}</label>
+        {{ form_widget(form.shippingCostType) }}
+    </div>
+    <div class="form-group col-md-2">
+        <label for="transportInvoiceNumber">{% trans %}Transport invoice number{% endtrans %}</label>
+        {{ form_widget(form.transportInvoiceNumber) }}
+    </div>
+    <div class="form-group col-md-2">
+        {{ form_widget(form.pay) }}
+    </div>
+</div>
+<div class="row">
+    <div class="form-group col-md-1">
+        <label for="salePriceWithOutVAT">{% trans %}Sale price without vat{% endtrans %}</label>
+        {{ form_widget(form.salePriceWithOutVAT) }}
+    </div>
+    <div class="form-group col-md-1">
+        <label for="salePriceWithOutVATType">{% trans %}PLN/EUR{% endtrans %}</label>
+        {{ form_widget(form.salePriceWithOutVATType) }}
+    </div>
+    <div class="form-group col-md-1">
+        <label for="salePriceWithVAT">{% trans %}Sale price with vat{% endtrans %}</label>
+        {{ form_widget(form.salePriceWithVAT) }}
+    </div>
+    <div class="form-group col-md-1">
+        <label for="salePriceWithVATType">{% trans %}PLN/EUR{% endtrans %}</label>
+        {{ form_widget(form.salePriceWithVATType) }}
+    </div>
+</div>
+
+<div class="navbar-toggler car-sale-form" data-toggle="collapse"
+     data-target="#carSale"
+     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    Verkaufen
+</div>
+<div class="collapse" id="carSale">
+    <div class="row">
+        <div class="form-group col-md-2">
+            <label for="discharge">{% trans %}Discharge{% endtrans %}</label>
+            {{ form_widget(form.discharge) }}
+        </div>
+        <div class="form-group col-md-2">
+            <label for="sellingPrice">{% trans %}Selling price{% endtrans %}</label>
+            {{ form_widget(form.sellingPrice) }}
+        </div>
+        <div class="form-group col-md-2">
+            <label for="seller">{% trans %}Seller{% endtrans %}</label>
+            {{ form_widget(form.seller) }}
+        </div>
+        <div class="form-group col-md-2">
+            <label for="date">{% trans %}Date{% endtrans %}</label>
+            {{ form_widget(form.date) }}
+        </div>
+        <div class="form-group col-md-2">
+            <label for="placeOfIssue">{% trans %}Place of issue{% endtrans %}</label>
+            {{ form_widget(form.placeOfIssue) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-2">
+            <label for="firma">{% trans %}Firma{% endtrans %}</label>
+            <select name="firm-select" id="firm-select"></select>
+            <div class="hide-form-element">
+                {% if carId is defined %}
+                    {{ form_widget(form.firma, {'attr': {'carDataId': carId}}) }}
+                {% else %}
+                    {{ form_widget(form.firma) }}
+                {% endif %}
+            </div>
+        </div>
+        <div class="form-group col-md-1">
+            <label for="firstName">{% trans %}First name{% endtrans %}</label>
+            {{ form_widget(form.firstName) }}
+        </div>
+        <div class="form-group col-md-1">
+            <label for="lastName">{% trans %}Last name{% endtrans %}</label>
+            {{ form_widget(form.lastName) }}
+        </div>
+        <div class="form-group col-md-2">
+            <label for="street">{% trans %}Street{% endtrans %}</label>
+            {{ form_widget(form.street) }}
+        </div>
+        <div class="form-group col-md-2">
+            <label for="placeIndex">{% trans %}Place Index{% endtrans %}</label>
+            {{ form_widget(form.placeIndex) }}
+        </div>
+        <div class="form-group col-md-2">
+            <label for="city">{% trans %}City{% endtrans %}</label>
+            {{ form_widget(form.city) }}
+        </div>
+        <div class="form-group col-md-2">
+            <label for="firmNumber">{% trans %}Firm Number{% endtrans %}</label>
+            {{ form_widget(form.firmNumber) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-2">
+            <label for="email">{% trans %}Email{% endtrans %}</label>
+            {{ form_widget(form.email) }}
+        </div>
+        <div class="form-group col-md-2">
+            <label for="phoneNumber">{% trans %}Phone Number{% endtrans %}</label>
+            {{ form_widget(form.phoneNumber) }}
+        </div>
+        <div class="form-group col-md-2">
+            <label for="mobileNumber">{% trans %}Mobile Number{% endtrans %}</label>
+            {{ form_widget(form.mobileNumber) }}
+        </div>
+        <div class="form-group col-md-2">
+            <label for="fax">{% trans %}Fax{% endtrans %}</label>
+            {{ form_widget(form.fax) }}
+        </div>
+        <div class="form-group col-md-2">
+            <label for="clientStatus">{% trans %}Client Status{% endtrans %}</label>
+            {{ form_widget(form.clientStatus) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-2">
+            <label for="bodyType">{% trans %}Fahrzeugart{% endtrans %}</label>
+            {{ form_widget(form.bodyType) }}
+        </div>
+        <div class="form-group col-md-2">
+            <label for="carStatus">{% trans %}Car Status{% endtrans %}</label>
+            {{ form_widget(form.carStatus) }}
+        </div>
+        <div class="form-group col-md-2">
+            <label for="ptsNumber">{% trans %}PTS Number{% endtrans %}</label>
+            {{ form_widget(form.ptsNumber) }}
+        </div>
+        <div class="form-group col-md-2">
+            <label for="fuel">{% trans %}Fuel{% endtrans %}</label>
+            {{ form_widget(form.fuel) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-2">
+            <label for="paymentCondition">{% trans %}Payment Condition{% endtrans %}</label>
+            {{ form_widget(form.paymentCondition) }}
+        </div>
+        <div class="form-group col-md-2">
+            <label for="paymentType">{% trans %}Payment Type{% endtrans %}</label>
+            {{ form_widget(form.paymentType) }}
+        </div>
+        <div class="form-group col-md-2">
+            <label for="taxType">{% trans %}Tax Type{% endtrans %}</label>
+            {{ form_widget(form.taxType) }}
+        </div>
+        <div class="form-group col-md-2">
+            <label for="deposit">{% trans %}Deposit{% endtrans %}</label>
+            {{ form_widget(form.deposit) }}
+        </div>
+        <div class="form-group col-md-2">
+            <label for="datum">{% trans %}Datum{% endtrans %}</label>
+            {{ form_widget(form.datum) }}
+        </div>
+        <div class="form-group col-md-2">
+            <label for="ort">{% trans %}Ort{% endtrans %}</label>
+            {{ form_widget(form.ort) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-3">
+            <label for="additionalWork">{% trans %}Additional work{% endtrans %}</label>
+            {{ form_widget(form.additionalWork) }}
+        </div>
+        <div class="form-group col-md-3">
+            <label for="notes">{% trans %}Notes{% endtrans %}</label>
+            {{ form_widget(form.notes) }}
+        </div>
+    </div>
+</div>
+
+<div class="form-group col-md-12">
+    <input class="btn btn-primary" type="submit" value="{% trans %}Save{% endtrans %}" />
+    <a href="{{ path('admin_car_index') }}" type="button" class="btn btn-primary">{% trans %}Cancel{% endtrans %}</a>
+</div>

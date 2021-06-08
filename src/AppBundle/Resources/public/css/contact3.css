@@ -1,0 +1,27 @@
+.contact {
+    margin-top: 30px;
+}
+.contact-title {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+.contact-body {
+    margin-bottom: 30px;
+}
+.contact-line {
+    margin-top: 60px;
+}
+.contact-object {
+    text-align: center;
+}
+.photo img {
+    max-height: 270px;
+}
+.flag-image {
+    height: 25px;
+}
+.text div {
+    margin-top: 2px;
+    font-size: 18px;
+}

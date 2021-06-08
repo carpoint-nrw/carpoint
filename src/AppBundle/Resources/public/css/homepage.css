@@ -1,0 +1,156 @@
+.cars {
+    margin-top: 15px;
+}
+table.dataTable {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+#datatable-homepage {
+    border-top: 0;
+}
+#datatable-homepage_filter {
+    margin-left: 0;
+    margin-right: 14px;
+    float: right;
+}
+#datatable-homepage_info {
+    margin-top: 25px;
+}
+.dataTables_processing {
+    display: none !important;
+}
+table.dataTable thead tr th {
+    white-space: nowrap;
+}
+table.dataTable tbody tr td {
+    white-space: nowrap;
+    height: 28px !important;
+    padding: 0 2px 0 2px !important;
+}
+.paginate_button a {
+    color: #000000ad !important;
+}
+.pagination > .active a {
+    background-color: #000000ad !important;
+    color: #fff !important;
+    border-color: #000000ad !important;
+}
+.dataTables_scrollBody::-webkit-scrollbar {
+    width: 7px;
+    background-color: #fff;
+}
+.dataTables_scrollBody::-webkit-scrollbar-thumb {
+    background-color: #000000ad;
+}
+.dataTables_scrollBody::-webkit-scrollbar-track {
+    border-bottom: 1px solid rgba(0,0,0,.15);
+    border-top: 1px solid rgba(0,0,0,.15);
+    border-right: 1px solid rgba(0,0,0,.15);
+    margin-top: -1px;
+}
+.cars .dropdown .dropdown-toggle {
+    background-color: #c7ccd0 !important;
+}
+.cars .dropdown .dropdown-toggle:hover {
+    background-color: #b3b8bb !important;
+    cursor: pointer;
+}
+.cars .dropdown .fa-chevron-down {
+    width: 100%;
+    text-align: center;
+    color: #000;
+}
+.cars .dropdown-menu {
+    padding: 0 !important;
+    margin: 5px 0 0 0 !important;
+    width: auto !important;
+    min-width: 140px !important;
+    max-width: 250px !important;
+    height: auto !important;
+    min-height: 150px !important;
+    max-height: 350px !important;
+    overflow: auto;
+    border: 3px solid #848484;
+}
+.cars .dropdown-menu .filter-field {
+    padding: 0 5px 0 5px !important;
+    margin: 0 !important;
+    -moz-user-select: none;
+    user-select: none;
+    float: left;
+    width: 100%;
+    text-align: left;
+    border-bottom: 1px solid #ded2d2;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.cars .dropdown-menu .filter-field:hover,
+.filter-added {
+    background-color: #d8d6d6;
+}
+.cars .dropdown {
+    position: inherit;
+    padding-top: 0 !important;
+}
+.cars .DTFC_LeftHeadWrapper {
+    overflow: visible !important;
+}
+.cars .dataTables_scrollHead {
+    position: inherit !important;
+}
+.filter-empty {
+    text-align: center;
+}
+.dataTables_scrollBody .dropdown {
+    display: none;
+}
+.add-to-order {
+    cursor: pointer;
+}
+.delete-from-order {
+    cursor: pointer;
+    color: #8c1212;
+}
+.cars .dropdown .filter-dropdown-menu,
+.cars .dropdown .filter-dropdown-menu:hover {
+    background-color: #b34e4e !important;
+}
+.cars-sorting {
+    margin-top: 15px;
+}
+.cars-sorting .cars-sorting-dropdown,
+.cars-sorting .cars-price-info {
+    display: inline-block;
+}
+.cars-sorting-dropdown .dropdown-toggle {
+    background-color: #c7ccd0;
+}
+.cars-price-info {
+    float: right;
+}
+.info-block {
+    color: #8c1212;
+    font-size: 18px;
+}
+.cars-sorting-dropdown .fa-chevron-down {
+    color: #000;
+}
+.dropdown-menu-elems {
+    padding: 0;
+    width: 170px;
+}
+.dropdown-menu-elem {
+    height: 30px;
+    cursor: pointer;
+}
+.cars-sorting-selected {
+    background-color: #ced1d4;
+}
+.dropdown-menu-elem:hover {
+    background-color: #b3b8bb;
+}
+.elem-block {
+    height: 100%;
+    padding: 6px 0 0 6px;
+}

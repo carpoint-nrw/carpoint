@@ -1,0 +1,92 @@
+{% extends '@App/layout.html.twig' %}
+
+{% block title %}Startseite{% endblock %}
+
+{% block main %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="cars-sorting">
+                <div class="dropdown cars-sorting-dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Sortieren nach <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-elems" aria-labelledby="dropdownMenuButton">
+                        <div class="dropdown-menu-elem cars-sorting-selected" data-column="completed" data-sort="asc">
+                            <div class="elem-block">Liefertermin zuerst</div>
+                        </div>
+                        <div class="dropdown-menu-elem" data-column="completed" data-sort="desc">
+                            <div class="elem-block">Liefertermin zuletzt</div>
+                        </div>
+                        <div class="dropdown-menu-elem" data-column="minimumSellingPrice" data-sort="desc">
+                            <div class="elem-block">Preis absteigend</div>
+                        </div>
+                        <div class="dropdown-menu-elem" data-column="minimumSellingPrice" data-sort="asc">
+                            <div class="elem-block">Preis aufsteigend</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cars-price-info">
+                    <div class="info-block">
+                        {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                            Alle Preise inklusive Lieferung
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="cars">
+                <table id="datatable-homepage" class="table image-table table-bordered table-striped table-condensed table-hover">
+                    <thead>
+                        <tr>
+                            {% if is_granted('IS_AUTHENTICATED_REMEMBERED') and app.user.accessFrontendSite %}
+                                <th></th>
+                            {% endif %}
+                            <th>Marke</th>
+                            <th>Modell</th>
+                            <th>Ausführung</th>
+                            <th>Farbe</th>
+                            <th>ID Nummer</th>
+                            <th>Liefertermin</th>
+                            <th>Preis PLN</th>
+                            <th>Preis €</th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            {% if is_granted('IS_AUTHENTICATED_REMEMBERED') and app.user.accessFrontendSite %}
+                                <th></th>
+                            {% endif %}
+                            <th data-identifier="brand"></th>
+                            <th data-identifier="model"></th>
+                            <th data-identifier="versionGerman"></th>
+                            <th data-identifier="colorGerman"></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            {%- include '@App/partial/modal/modal_for_detail_item.html.twig' -%}
+        </div>
+    </div>
+{% endblock %}
+
+{% block app_stylesheets %}
+    <link href="{{ asset('bundles/admin/css/datatable.css') }}" rel="stylesheet">
+    <link href="{{ asset('bundles/app/css/homepage.css') }}" rel="stylesheet">
+{% endblock %}
+{% block app_javascripts %}
+    <script type="text/javascript">
+	  window.ajaxData = '{{ path('app_homepage_ajaxdataforuser') }}';
+	  window.login = '{{ path('app_login_index') }}';
+	  window.filtersAjaxData = '{{ path('app_ajax_homepagefilters_gethomepagefilterdata') }}';
+	  window.addToOrder = '{{ path('app_homepage_ajaxaddtoorder') }}';
+	  window.accessFrontendSite = '{{ is_granted('IS_AUTHENTICATED_REMEMBERED') ? app.user.accessFrontendSite : false }}';
+	  window.userAuthorized = '{{ is_granted('IS_AUTHENTICATED_REMEMBERED') ? true : false }}';
+	  window.modelRelativePath = '{{ model_relative_path }}';
+	  window.loginPath = '{{ path('app_login_index') }}';
+    </script>
+    <script src="{{ asset('js/datatables.min.js') }}"></script>
+    <script src="{{ asset('bundles/app/js/homepage/homepage.js') }}" type="module"></script>
+{% endblock %}

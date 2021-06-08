@@ -1,0 +1,119 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% if app.session.get('cookie-popup') == false and not is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+        <div class="cookie-popup">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="cookie-popup-body">
+                            <div class="cookie-popup-message">
+                                Diese Website verwendet Cookies, um Ihnen ein bestmögliches Nutzungserlebnis zu bieten. Durch die Nutzung der Website stimmen Sie der Cookie-Nutzung zu.
+                            </div>
+                            <div class="cookie-popup-button">
+                                <button class="btn btn-secondary cookie-popup-button-body" type="button">
+                                    Ok
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    <div class="container main">
+        <div class="row main">
+            <div class="col-md-2 main-left-menu main">
+                <div class="left-sidebar">
+                    <div class="sidebar-logo">
+                        <img src="{{ asset('bundles/app/images/logo.png') }}" class="logo" alt="logo">
+                    </div>
+                    <div class="sidebar-menu-top">
+                        <div class="menu-top">
+                            <div class="menu-button">
+                                <a href="{{ path('app_homepage_index') }}">Fahrzeuge</a>
+                            </div>
+                            <div class="menu-button">
+                                <a href="{{ path('app_info_index') }}">Info</a>
+                            </div>
+                            <div class="menu-button">
+                                <a href="{{ path('app_contact_index') }}">Kontakt</a>
+                            </div>
+                            <div class="menu-button">
+                                {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                                    <a href="{{ path('admin_security_logout') }}">Logout</a>
+                                {% else %}
+                                    <a href="{{ path('app_login_index') }}">Login</a>
+                                {% endif %}
+                            </div>
+                            {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                                {% if app.user.accessFrontendSite %}
+                                    <div class="user-additional-menu">
+                                        <div class="menu-button">
+                                            <a href="{{ path('app_order_index') }}">Bestellungen</a>
+                                        </div>
+                                        {% if app.user.getEmail() != 'test@mail.com' %}
+                                            <div class="menu-button">
+                                                <a href="{{ path('app_user_index') }}">Daten</a>
+                                            </div>
+                                        {% endif %}
+                                        <div class="menu-button">
+                                            <a href="{{ path('app_basket_index') }}" class="order">Warenkorb <i class="fas fa-shopping-cart"></i></a>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-10 main-body main">
+                <div class="main-right">
+                    <div class="main-body-top">
+                        {% block main %}{% endblock %}
+                    </div>
+                    <div class="main-body-bottom">
+                        <div class="bottom-menu">
+                            <div class="bottom-menu-elem">
+                                <a href="{{ path('app_homepage_index') }}">Fahrzeuge</a>
+                            </div>
+                            <div class="bottom-menu-elem">
+                                <a href="{{ path('app_contact_index') }}">Kontakt</a>
+                            </div>
+                            <div class="bottom-menu-elem">
+                                <a href="{{ path('app_info_index') }}">Info</a>
+                            </div>
+                            <div class="bottom-menu-elem">
+                                    <a href="{{ path('app_daten_index') }}">Datenschutz</a>
+                            </div>
+                            {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                                <div class="bottom-menu-elem">
+                                    <a href="{{ path('app_agb_index') }}">AGB</a>
+                                </div>
+                            {% endif %}
+                            <div class="bottom-menu-elem">
+                                <a href="{{ path('app_impressum_index') }}">impressum</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link href="{{ asset('bundles/app/css/main.css') }}" rel="stylesheet">
+    {% block app_stylesheets %}{% endblock %}
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript">
+	  window.basketCount = '{{ is_granted('IS_AUTHENTICATED_REMEMBERED') and app.user.accessFrontendSite ? path('app_ajax_basket_getbasketcountitems') : false }}';
+	  window.cookiePopup = '{{ path('app_ajax_cookie_setcheckcookie') }}';
+    </script>
+    <script src="{{ asset('js/datatables.min.js') }}"></script>
+    <script src="{{ asset('bundles/app/js/app.js') }}"></script>
+    {% block app_javascripts %}{% endblock %}
+{% endblock %}

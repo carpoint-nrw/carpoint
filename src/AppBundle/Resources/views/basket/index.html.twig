@@ -1,0 +1,50 @@
+{% extends '@App/layout.html.twig' %}
+
+{% block title %}Warenkorb{% endblock %}
+
+{% block main %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="cars">
+                <table id="datatable-homepage" class="table image-table table-bordered table-striped table-condensed table-hover">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Marke</th>
+                            <th>Modell</th>
+                            <th>Ausführung</th>
+                            <th>Farbe</th>
+                            <th>ID Nummer</th>
+                            <th>Liefertermin</th>
+                            <th>Preis PLN</th>
+                            <th>Preis €</th>
+                            <th></th>
+                            <th>Kaufvertrag</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            {%- include '@App/partial/modal/modal_for_detail_item.html.twig' -%}
+            {%- include '@App/partial/modal/modal_for_pdf.html.twig' -%}
+        </div>
+    </div>
+{% endblock %}
+
+{% block app_stylesheets %}
+    <link href="{{ asset('bundles/admin/css/datatable.css') }}" rel="stylesheet">
+    <link href="{{ asset('bundles/app/css/homepage.css') }}" rel="stylesheet">
+    <link href="{{ asset('bundles/app/css/basket.css') }}" rel="stylesheet">
+{% endblock %}
+{% block app_javascripts %}
+    <script type="text/javascript">
+	  window.ajaxData = '{{ path('app_basket_ajaxdataforuser') }}';
+	  window.deleteFromOrder = '{{ path('app_basket_delete') }}';
+	  window.accessFrontendSite = '{{ is_granted('IS_AUTHENTICATED_REMEMBERED') ? app.user.accessFrontendSite : false }}';
+	  window.userAuthorized = '{{ is_granted('IS_AUTHENTICATED_REMEMBERED') ? true : false }}';
+	  window.modelRelativePath = '{{ model_relative_path }}';
+	  window.loginPath = '{{ path('app_login_index') }}';
+	  window.carPdfDownload = '{{ path('app_carexportpdf_deedexport') }}';
+    </script>
+    <script src="{{ asset('js/datatables.min.js') }}"></script>
+    <script src="{{ asset('bundles/app/js/basket/baskett.js') }}" type="module"></script>
+{% endblock %}

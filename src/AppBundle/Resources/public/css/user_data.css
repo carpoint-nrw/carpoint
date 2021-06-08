@@ -1,0 +1,10 @@
+.user-data-title {
+    text-align: center;
+}
+#gender {
+    display: inline-block;
+}
+.radio {
+    display: inline-block;
+    margin-left: 10px;
+}

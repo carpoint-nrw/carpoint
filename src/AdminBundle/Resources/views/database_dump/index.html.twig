@@ -1,0 +1,35 @@
+{% extends '@Admin/layout.html.twig' %}
+
+{% block title %}{% trans %}Database Dump{% endtrans %}{% endblock %}
+
+{% block main %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="dump">
+                <table id="datatable-dump" class="table image-table table-bordered table-striped table-condensed table-hover">
+                    <thead>
+                        <tr>
+                            <th>{% trans %}Date Dump{% endtrans %}</th>
+                            <th>{% trans %}Restore{% endtrans %}</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            {%- include '@Admin/partial/modal/modal_for_restore.html.twig' with {'type': 'Do you want to restore database?'|trans} -%}
+        </div>
+    </div>
+{% endblock %}
+
+{% block admin_stylesheets %}
+    <link href="{{ asset('css/datatables.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('bundles/admin/css/datatable.css') }}" rel="stylesheet">
+{% endblock %}
+{% block admin_javascripts %}
+    <script type="text/javascript">
+	  window.ajaxData = '{{ path('admin_databasedump_ajaxdata') }}';
+	  window.restore = '{{ path('admin_databasedump_restore') }}';
+	  window.userLocale = '{{ app.user.locale }}';
+    </script>
+    <script src="{{ asset('js/datatables.min.js') }}"></script>
+    <script src="{{ asset('bundles/admin/js/database_dump/database_dump.js') }} " type="module"></script>
+{% endblock %}

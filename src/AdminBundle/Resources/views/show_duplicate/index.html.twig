@@ -1,0 +1,16 @@
+{% extends '@Admin/layout.html.twig' %}
+
+{% block title %}{% trans %}Show Duplicates{% endtrans %}{% endblock %}
+
+{% block main %}
+    <div class="row">
+        <div class="col-md-12">
+            {% for vin in duplicates %}
+                <p>{{ vin }}</p>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block admin_stylesheets %}{% endblock %}
+{% block admin_javascripts %}{% endblock %}

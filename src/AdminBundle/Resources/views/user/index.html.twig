@@ -1,0 +1,47 @@
+{% extends '@Admin/layout.html.twig' %}
+
+{% block title %}{% trans %}Users{% endtrans %}{% endblock %}
+
+{% block main %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="page-title">
+                <a href="{{ path('admin_user_new') }}" class="btn btn-primary" type="button">{% trans %}Add New User{% endtrans %}</a>
+            </div>
+            <div class="users">
+                <table id="datatable-user" class="table image-table table-bordered table-striped table-condensed table-hover">
+                    <thead>
+                        <tr>
+                            <th>{% trans %}Edit{% endtrans %}</th>
+                            <th>{% trans %}Delete{% endtrans %}</th>
+                            <th>{% trans %}First name{% endtrans %}</th>
+                            <th>{% trans %}Last name{% endtrans %}</th>
+                            <th>{% trans %}Email{% endtrans %}</th>
+                            <th>{% trans %}Phone number{% endtrans %}</th>
+                            <th>{% trans %}Role{% endtrans %}</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            {%- include '@Admin/partial/modal/modal_for_delete_item.html.twig' with {'type': 'Do you want to delete this '|trans  ~ 'User'|trans  ~ '?'} -%}
+        </div>
+    </div>
+{% endblock %}
+
+{% block admin_stylesheets %}
+    <link href="{{ asset('css/datatables.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('bundles/admin/css/datatable.css') }}" rel="stylesheet">
+{% endblock %}
+{% block admin_javascripts %}
+    <script type="text/javascript">
+	  window.ajaxData = '{{ path('admin_user_ajaxdataforuser') }}';
+	  window.editRoute = '{{ path('admin_user_edit') }}';
+	  window.deleteUser = '{{ path('admin_user_delete') }}';
+	  window.userLocale = '{{ app.user.locale }}';
+	  window.firstName = '{{ 'First name'|trans }}';
+	  window.lastName = '{{ 'Last name'|trans }}';
+	  window.email = '{{ 'Email'|trans }}';
+    </script>
+    <script src="{{ asset('js/datatables.min.js') }}"></script>
+    <script src="{{ asset('bundles/admin/js/user/user.js') }} " type="module"></script>
+{% endblock %}

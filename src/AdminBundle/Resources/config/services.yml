@@ -1,0 +1,84 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  AdminBundle\:
+    resource: '../../*'
+    exclude: '../../{Entity,Repository,Tests}'
+
+  AdminBundle\Controller\:
+    resource: '../../Controller'
+    public: true
+    tags: ['controller.service_arguments']
+
+  AdminBundle\DataFixtures\:
+    resource: '../../DataFixtures'
+    tags: ['doctrine.fixture.orm']
+
+  AdminBundle\EventListeners\LocaleListener:
+    arguments:
+      - "@service_container"
+    tags:
+      - { name: kernel.event_listener, event: kernel.request}
+
+  AdminBundle\Services\CarUpdater:
+    tags:
+      - { name: monolog.logger, channel: car-update }
+
+  AdminBundle\Controller\ExportExcelController:
+    arguments:
+      $exportExcelPath: '%export_excel%'
+    tags:
+      - { name: monolog.logger, channel: export }
+
+  AdminBundle\Services\ExportCsv\ExportStatisticCsv:
+    arguments:
+      $filesPath: '%files_path%'
+      $filesRelativePath: '%files_relative_path%'
+
+  AdminBundle\Controller\DatabaseDumpController:
+    arguments:
+      $dumpPath: '%dump_path%'
+      $databaseName: '%database_name%'
+      $databaseUser: '%database_user%'
+      $databasePassword: '%database_password%'
+    tags:
+      - { name: monolog.logger, channel: dump }
+
+  AdminBundle\Command\CreateDatabaseDump:
+    arguments:
+      $dumpPath: '%dump_path%'
+      $databaseName: '%database_name%'
+      $databaseUser: '%database_user%'
+      $databasePassword: '%database_password%'
+    tags:
+      - { name: monolog.logger, channel: dump }
+
+  AdminBundle\Command\ParseCurrencyRate:
+    tags:
+      - { name: monolog.logger, channel: convert }
+
+  AdminBundle\Controller\References\ModelController:
+    arguments:
+      $modelAbsolutePath: '%model_absolute_path%'
+
+  AdminBundle\Controller\CarFileController:
+    arguments:
+      $carFilesPath: '%car_files_absolute_path%'
+
+  AdminBundle\Controller\CarExportPdfController:
+    arguments:
+      $carInvoicePath: '%car_invoice_absolute_path%'
+
+  AdminBundle\Controller\CarController:
+    arguments:
+      $carInvoicePath: '%car_invoice_absolute_path%'
+
+  AdminBundle\Controller\InvoiceController:
+    arguments:
+      $filesPath: '%files_path%'
+      $carInvoicePath: '%car_invoice_absolute_path%'
+    tags:
+      - { name: monolog.logger, channel: export }

@@ -1,0 +1,101 @@
+{% extends '@App/layout.html.twig' %}
+
+{% block title %}meine Daten{% endblock %}
+
+{% block main %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="user-data-title">
+                <h1>meine Daten</h1>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="user-data-body">
+                {{ form_start(form) }}
+                <div class="form-group col-md-12">
+                    <label for="fax">{% trans %}Anrede*{% endtrans %}</label>
+                    {{ form_widget(form.gender) }}
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="firstName">{% trans %}Vorname*{% endtrans %}</label>
+                    {{ form_widget(form.firstName) }}
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="lastName">{% trans %}Nachname*{% endtrans %}</label>
+                    {{ form_widget(form.lastName) }}
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="firmNumber">{% trans %}Firmenname*{% endtrans %}</label>
+                    {{ form_widget(form.firmNumber) }}
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="street">{% trans %}Strasse/Nr.*{% endtrans %}</label>
+                    {{ form_widget(form.street) }}
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="placeIndex">{% trans %}Postleitzahl*{% endtrans %}</label>
+                    {{ form_widget(form.placeIndex) }}
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="city">{% trans %}Ort*{% endtrans %}</label>
+                    {{ form_widget(form.city) }}
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="city">{% trans %}Land*{% endtrans %}</label>
+                    {{ form_widget(form.country) }}
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="phoneNumber">{% trans %}Tel. Nummer{% endtrans %}</label>
+                    {{ form_widget(form.phoneNumber) }}
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="mobileNumber">{% trans %}Mobile Number*{% endtrans %}</label>
+                    {{ form_widget(form.mobileNumber) }}
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="fax">{% trans %}Fax Nummer{% endtrans %}</label>
+                    {{ form_widget(form.fax) }}
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="firmNumber">{% trans %}USt-IdNr.*{% endtrans %}</label>
+                    {{ form_widget(form.ustIdNr) }}
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="email">{% trans %}E-Mail-Adresse*{% endtrans %}</label>
+                    {{ form_widget(form.email) }}
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="plainPassword">{% trans %}Passwort*{% endtrans %}</label>
+                    {{ form_widget(form.plainPassword.first) }}
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="plainPassword">{% trans %}Passwort bestätigen*{% endtrans %}</label>
+                    {{ form_widget(form.plainPassword.second) }}
+                </div>
+                <div class="form-group col-md-12">
+                    {{ form_errors(form) }}
+                </div>
+                {% for message in app.flashes('success') %}
+                    <div class="form-group col-md-12">
+                        <div class="flash-success">
+                            <div class="flash-message">
+                                {{ message }}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                <div class="form-group col-md-12">
+                    <input class="btn btn-primary registration-submit" type="submit" value="{% trans %}Weiter{% endtrans %}" />
+                </div>
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block app_stylesheets %}
+    <link href="{{ asset('bundles/app/css/user_data.css') }}" rel="stylesheet">
+{% endblock %}
+{% block app_javascripts %}{% endblock %}

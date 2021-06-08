@@ -1,0 +1,259 @@
+/* Header main */
+.header {
+    min-height: 50px;
+    background-color: #00537E;
+}
+.header-left {
+    margin: 12px 0 0 0;
+}
+.header-left a {
+    font-size: 20px;
+    color: #E5EDF1;
+    font-weight: bold;
+    text-decoration: none;
+}
+.header-right {
+    float: right;
+}
+.navbar-toggler {
+    padding: .25rem .75rem;
+    font-size: 1.25rem;
+    line-height: 1;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+}
+.menu-icon {
+    font-size: 35px;
+    color: #fff;
+    cursor: pointer;
+}
+.menu-icon:hover {
+    color: #C8C8C8;
+}
+/* Header main END*/
+
+/* Right dropdown menu */
+.dropdown {
+    padding-top: 8px;
+}
+.dropdown-button-line {
+    width: 1px;
+    height: 33px;
+    background: #5C91AD;
+    position: absolute;
+    margin: -7px 0 0 -7px;
+}
+.dropdown-menu {
+    min-width: 90px !important;
+    text-align: center !important;
+}
+.dropdown-menu a {
+    color: #949596;
+}
+.dropdown-menu a:hover {
+    text-decoration: none;
+}
+.dropdown .dropdown-toggle {
+    background-color: #1A6598 !important;
+    color: #ffffff;
+    border-radius: 0;
+}
+.dropdown .dropdown-toggle:hover,
+.dropdown .dropdown-toggle:focus {
+    background-color: #1b6ea3 !important;
+    color: #ffffff;
+}
+.dropdown-menu {
+    min-width: 90px !important;
+    text-align: center !important;
+    width: 140px;
+    border-radius: 2px;
+}
+.dropdown-menu a {
+    color: #949596;
+}
+.dropdown-menu a:hover {
+    text-decoration: none;
+}
+.dropdown-open-menu {
+    margin: 0 -6px 0 0;
+}
+.dropdown-toggle {
+    max-height: 33px;
+}
+.dropdown-toggle div {
+    display: inline-block;
+    overflow: hidden;
+}
+.dropdown-user-icon {
+    margin-left: -4px;
+}
+.username {
+    max-width: 210px;
+    text-overflow: ellipsis;
+    margin-left: 2px;
+    margin-right: 10px;
+}
+.dropdown-item:hover {
+    color: #312d2d;
+}
+.dropdown-open-icon {
+    width: 18px;
+    margin: 0 -2px 0 -2px
+}
+.dropdown-item-element {
+    margin: 5px 0 5px 0;
+}
+.dropdown-profile-icon {
+    margin-left: -3px;
+}
+/* Right dropdown menu END */
+
+/* Aside */
+.aside-padding {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+.sidebar {
+    background-color: #363636;
+}
+.references {
+    background-color: #363636;
+}
+.sidebar-nav {
+    height: 100%;
+}
+.sidebar-nav a {
+    font-weight: bold;
+    padding: 7px 0 7px 10px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #818181;
+    display: block;
+    border-left: 3px solid #363636;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.references a {
+    font-size: 15px;
+}
+.sidebar-nav a:hover {
+    color: #f1f1f1;
+    background-color: #636363;
+    border-left: 3px solid #d8d8d8;
+}
+.sidebar-icon {
+    margin-right: 3px;
+}
+.references i {
+    margin-left: 18px;
+}
+.active {
+    color: #f1f1f1 !important;
+    background-color: #636363;
+    border-left: 3px solid #d8d8d8 !important;
+}
+.sidebar-size-icon {
+    position: absolute;
+    z-index: 100;
+    margin-left: 125px;
+    margin-top: -20px;
+    font-size: 28px;
+    color: #fff;
+}
+.sidebar-main {
+    display: none;
+}
+.fa-angle-double-right {
+    transition: all 0.3s linear;
+}
+.fa-angle-double-right.transform {
+    transform: rotate(180deg);
+}
+/* Aside END */
+
+/* Main */
+.page-title {
+    margin: 15px 0 15px 0;
+}
+.pages-edit-icon,
+.pages-delete-icon {
+    margin: 3px 0 0 0;
+    font-size: 19px !important;
+}
+/* Main END */
+
+/* Custom */
+.form-group {
+    padding-left: 0 !important;
+}
+.car-sale-form {
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 2px solid #8e8e8e;
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+.export-excel-title {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.car-edit-history {
+    margin-top: 20px;
+}
+.color-display-none {
+    display: none;
+}
+.page-title-custom {
+    margin-bottom: 0 !important;
+}
+.car-form-line {
+    border-bottom: 2px solid #8e8e8e;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+.car-right-buttons {
+    float: right;
+}
+.select-input-change {
+    width: 100%;
+}
+.dump {
+    margin-top: 20px;
+}
+.restore-icon {
+    cursor: pointer;
+}
+.users {
+    margin-top: 5px;
+}
+.model-image-body {
+    max-width: 200px;
+    margin-top: 10px;
+}
+.currencies,
+.parse-currency {
+    margin-top: 20px;
+}
+.car-show-duplicates a {
+    color: #000;
+    text-decoration: none;
+}
+.hide-form-element {
+    display: none;
+}
+.invoice-menu,
+.invoices {
+    margin-top: 20px;
+}
+.invoice-menu div {
+    display: inline-block;
+}
+.sort-year-select,
+.sort-year-month {
+    min-width: 120px;
+}
+/* Custom END */

@@ -1,0 +1,55 @@
+security:
+  encoders:
+    AdminBundle\Entity\User\AbstractUser: bcrypt
+
+  role_hierarchy:
+    ROLE_ADMIN_1: ROLE_ADMIN
+    ROLE_ADMIN_2: ROLE_ADMIN
+    ROLE_ADMIN_3: ROLE_ADMIN
+    ROLE_ADMIN_4: ROLE_ADMIN
+    ROLE_ADMIN_5: ROLE_ADMIN
+    ROLE_ADMIN_6: ROLE_ADMIN
+    ROLE_ADMIN_7: ROLE_ADMIN
+    ROLE_ADMIN_8: ROLE_ADMIN
+    ROLE_ADMIN_9: ROLE_ADMIN
+    ROLE_ADMIN_10: ROLE_ADMIN
+    ROLE_ADMIN_11: ROLE_ADMIN
+    ROLE_ADMIN_12: ROLE_ADMIN
+    ROLE_ADMIN_13: ROLE_ADMIN
+    ROLE_ADMIN_14: ROLE_ADMIN
+    ROLE_ADMIN_15: ROLE_ADMIN
+    ROLE_ADMIN: ROLE_USER
+    ROLE_USER: ~
+
+  providers:
+    main:
+      entity:
+        class: AdminBundle\Entity\User\AbstractUser
+        property: email
+
+  firewalls:
+    dev:
+      pattern: ^/(_(profiler|wdt)|css|images|js)/
+      security: false
+
+    main:
+      anonymous: ~
+      form_login:
+        login_path: admin_security_login
+        check_path: admin_security_logincheck
+        default_target_path: admin_security_loginredirect
+        always_use_default_target_path: true
+
+        provider: main
+        username_parameter: email
+        password_parameter: password
+      logout:
+        path:   admin_security_logout
+        target: app_login_logoutredirect
+
+  access_control:
+    - { path: ^/admin/login, role: IS_AUTHENTICATED_ANONYMOUSLY }
+    - { path: ^/admin/users/edit-profile, role: ROLE_ADMIN }
+    - { path: ^/admin/users, role: ROLE_ADMIN }
+    - { path: ^/admin, role: ROLE_ADMIN }
+    - { path: ^/, role: IS_AUTHENTICATED_ANONYMOUSLY }

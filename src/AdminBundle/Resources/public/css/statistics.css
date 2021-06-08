@@ -1,0 +1,33 @@
+.dataTable {
+    width: 100% !important;
+}
+.statistic-summe {
+    height: 10px;
+    font-size: 12px;
+    font-weight: initial;
+}
+.statistic-files {
+    padding-top: 10px;
+}
+#carUploadFile {
+    margin-bottom: 10px;
+}
+.statistic-summe {
+    display: inline-block;
+    margin-right: 30px;
+    font-size: 15px;
+}
+.statistic-summe-value {
+    font-weight: bold;
+}
+.statistic-missed-number a,
+.statistic-export-csv a {
+    color: #000;
+    text-decoration: none;
+}
+.statistic-width-kunde {
+    max-width: 100px !important;
+}
+.statistic-width-info {
+    min-width: 220px !important;
+}

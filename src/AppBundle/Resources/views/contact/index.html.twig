@@ -1,0 +1,115 @@
+{% extends '@App/layout.html.twig' %}
+
+{% block title %}Kontakt{% endblock %}
+
+{% block main %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="contact">
+                <div class="contact-title">Sie können uns einfach anrufen oder auch eine Email schreiben, wir werden uns schnellstmöglich bei Ihnen melden.</div>
+                <div class="contact-body">
+                    <div class="row contact-line">
+                        <div class="col-md-6">
+                            <div class="contact-object">
+                                <div class="photo">
+                                    <img src="{{ asset('bundles/app/images/photo1.jpeg') }}" alt="Eugen Maier">
+                                </div>
+                                <div class="text">
+                                    <div class="name">
+                                        <img src="{{ asset('bundles/app/images/german.jpg') }}" class="flag-image" alt="german"> Eugen Maier
+                                    </div>
+                                    <div class="phone">
+                                        .+49 162 4086 350
+                                    </div>
+                                    <div class="email">
+                                        e.maier@carlineb2b.de
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="contact-object">
+                                <div class="photo">
+                                    <img src="{{ asset('bundles/app/images/photo2.jpeg') }}" alt="Iwona Rezler-Witek">
+                                </div>
+                                <div class="text">
+                                    <div class="name">
+                                        <img src="{{ asset('bundles/app/images/polish.jpeg') }}" class="flag-image" alt="polish"> Iwona Rezler-Witek
+                                    </div>
+                                    <div class="phone">
+                                        .+48 533 333 491
+                                    </div>
+                                    <div class="email">
+                                        i.witek@carlineb2b.pl
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row contact-line">
+                        <div class="col-md-4">
+                            <div class="contact-object">
+                                <div class="photo">
+                                    <img src="{{ asset('bundles/app/images/photo5.jpeg') }}" alt="Martin Helisch">
+                                </div>
+                                <div class="text">
+                                    <div class="name">
+                                        <img src="{{ asset('bundles/app/images/german.jpg') }}" class="flag-image" alt="german">
+                                        <img src="{{ asset('bundles/app/images/polish.jpeg') }}" class="flag-image" alt="polish"> Martin Helisch
+                                    </div>
+                                    <div class="phone">
+                                        +49 157 785 996 73
+                                    </div>
+                                    <div class="email">
+                                        m.helisch@carlineb2b.de
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="contact-object">
+                                <div class="photo">
+                                    <img src="{{ asset('bundles/app/images/photo7.jpeg') }}" alt="Natalia Wroblewska">
+                                </div>
+                                <div class="text">
+                                    <div class="name">
+                                        <img src="{{ asset('bundles/app/images/polish.jpeg') }}" class="flag-image" alt="polish"> Natalia Wroblewska
+                                    </div>
+                                    <div class="phone">
+                                        +48 884 825 887
+                                    </div>
+                                    <div class="email">
+                                        n.wroblewska@carlineb2b.pl
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="contact-object">
+                                <div class="photo">
+                                    <img src="{{ asset('bundles/app/images/photo4.jpg') }}" alt="Tomek Czwarno">
+                                </div>
+                                <div class="text">
+                                    <div class="name">
+                                        <img src="{{ asset('bundles/app/images/polish.jpeg') }}" class="flag-image" alt="polish"> Tomek Czwarno
+                                    </div>
+                                    <div class="phone">
+                                        .+48 515 873 694
+                                    </div>
+                                    <div class="email">
+                                        t.czwarno@carlineb2b.pl
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block app_stylesheets %}
+    <link href="{{ asset('bundles/app/css/contact3.css') }}" rel="stylesheet">
+{% endblock %}
+{% block app_javascripts %}{% endblock %}

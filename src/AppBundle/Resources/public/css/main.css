@@ -1,0 +1,179 @@
+.main {
+    height: 100vh;
+}
+.main-left-menu {
+    padding-left: 0;
+    padding-right: 0;
+}
+.main-body {
+    padding-right: 0;
+    padding-left: 0;
+}
+.main-body-top {
+    padding-left: 15px;
+}
+.main-left-menu {
+    background-color: #dadada;
+    border-right: 2px solid #c7c7c761;
+    border-left: 2px solid #c7c7c761;
+}
+.left-sidebar {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+.logo {
+    width: 155px;
+    margin-top: 25px;
+}
+.sidebar-menu-top {
+    flex: 1 0 auto;
+}
+.menu-top {
+    margin-top: 100px;
+}
+.menu-button {
+    height: 45px;
+}
+.menu-button a {
+    color: #8c1212;
+    font-weight: bold;
+    font-size: 19px;
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    margin-top: 10px;
+}
+.menu-button i {
+    color: #8c1212;
+}
+.menu-button:hover a,
+.menu-button:hover i{
+    color: #4e0808;
+}
+.add-to-order .fa-shopping-cart {
+    margin: 5px 5px 0 5px;
+    font-size: 20px;
+    color: #464343;
+}
+.menu-button .fa-shopping-cart {
+    font-size: 20px;
+}
+.fa-shopping-cart:hover {
+    color: #000;
+}
+.open-modal-for-detail {
+    color: #8c1212;
+    text-decoration: none;
+}
+.open-modal-for-detail:hover,
+.open-modal-for-detail:active,
+.open-modal-for-detail:focus {
+    text-decoration: none;
+    color: #4e0808;
+}
+.main-right {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+.main-body-top {
+    flex: 1 0 auto;
+}
+.main-body-bottom {
+    flex: 0 0 auto;
+    height: 50px;
+    border-top: 2px solid #c7c7c7c9;
+}
+.bottom-menu {
+    text-align: center;
+    margin-top: 15px;
+}
+.bottom-menu div {
+    display: inline-block;
+}
+.bottom-menu-elem {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.bottom-menu-elem a {
+    color: #000000a6;
+    text-decoration: none;
+}
+.bottom-menu-elem a:hover {
+    color: #000;
+}
+.menu-button .fa-shopping-cart {
+    position: absolute;
+}
+.user-additional-menu {
+    margin-top: 60px;
+}
+.user-additional-menu a {
+    font-size: 16px;
+}
+.cookie-popup {
+    background-color: #b79a9a;
+    height: 55px;
+    position: absolute;
+    z-index: 10000;
+    width: 100%;
+}
+.cookie-popup-body div {
+    display: inline-block;
+}
+.cookie-popup-button {
+    float: right;
+}
+.cookie-popup-message {
+    font-weight: bold;
+    margin-top: 17px;
+}
+.cookie-popup-button {
+    margin-top: 9px;
+}
+.cookie-popup-button button:hover {
+    background-color: #bfbfbf;
+}
+.modal-dialog {
+    width: auto;
+    max-width: 1000px;
+}
+.car-info div {
+    display: inline-block;
+}
+.car-photo {
+    position: absolute;
+    margin-left: 20px;
+    right: 0;
+}
+.car-photo-body {
+    max-width: 400px;
+    max-height: 220px;
+}
+.first-block-body,
+.second-block-body {
+    font-size: 15px;
+}
+.block-body-margin {
+    margin-top: 10px;
+}
+.block-margin {
+    margin-top: 30px;
+}
+.block-body-color {
+    color: #2F628C;
+}
+.flash-success {
+    background: #b7eab2;
+    height: 50px;
+    border-radius: 5px;
+    line-height: 50px;
+}
+.flash-message {
+    margin-left: 12px;
+    font-size: 17px;
+    color: #585757;
+}

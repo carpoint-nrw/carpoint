@@ -1,0 +1,152 @@
+.dataTable th {
+    font-size: 13px;
+}
+.dataTable td {
+    font-size: 13px;
+    max-width: 140px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.dataTable th:focus {
+    outline: none !important;
+}
+.car-table-row-add-to-archive {
+    background-color: #eaad6c !important;
+}
+.car-table-row-edit {
+    background-color: #f5f362 !important;
+}
+.archive-added-only-german {
+    background-color: #bfc9e6 !important;
+}
+.archive-added-only-polish {
+    background-color: #b4dcb4 !important;
+}
+.car-table-select-row {
+    background-color: #cecece !important;
+}
+.car-created-at-color {
+    background-color: #9bdffb;
+}
+.car-table-termin-color {
+    background-color: #d0cd40 !important;
+}
+.statistic-table-yellow-background {
+    background-color: #f3ef44 !important;
+}
+.car-table-hover-row {
+    background-color: #e2e2e2 !important;
+}
+.car-table-condition-select {
+    border: none;
+    outline: none;
+    width: 100%;
+}
+.car-yellow {
+    background-color: #eaff39;
+}
+.car-red {
+    background-color: #ff7575;
+}
+.car-table-text-input-edit {
+    width: 100%;
+    border: 1px solid #fff;
+    outline: none;
+}
+.car-table-text-input-edit:focus {
+    border: 1px solid #808080;
+}
+.car-table-text-center {
+    text-align: center;
+}
+.users .dropdown {
+    position: inherit;
+    padding-top: 0 !important;
+}
+.users .dropdown .fa-chevron-down {
+    width: 100%;
+    text-align: center;
+    color: #000;
+}
+.users .dropdown .dropdown-toggle {
+    background-color: #d9dcde !important;
+}
+.users .dropdown .dropdown-toggle:hover {
+    background-color: #bfbfbf !important;
+    cursor: pointer;
+}
+.users .DTFC_LeftHeadWrapper {
+    overflow: visible !important;
+}
+.users .dataTables_scrollHead {
+    position: inherit !important;
+}
+.users .dropdown-menu {
+    padding: 0 !important;
+    margin: 5px 0 0 0 !important;
+    width: auto !important;
+    min-width: 140px !important;
+    max-width: 250px !important;
+    height: auto !important;
+    min-height: 150px !important;
+    max-height: 350px !important;
+    overflow: auto;
+    border: 3px solid #848484;
+}
+.users .dropdown-menu .filter-field {
+    padding: 0 5px 0 5px !important;
+    margin: 0 !important;
+    -moz-user-select: none;
+    user-select: none;
+    float: left;
+    width: 100%;
+    text-align: left;
+    border-bottom: 1px solid #ded2d2;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.users .dropdown-menu .filter-field:hover,
+.filter-added {
+    background-color: #d8d6d6;
+}
+.users .dropdown .filter-dropdown-menu,
+.users .dropdown .filter-dropdown-menu:hover {
+    background-color: #91d470 !important;
+}
+.dataTables_scrollBody .dropdown {
+    display: none;
+}
+.car-table-vinNumber-search,
+.car-table-discharge-search {
+    width: 100% !important;
+    height: 18px !important;
+}
+.car-table-pay-color {
+    background-color: #3a52d8 !important;
+}
+.car-update-button {
+    width: 70px;
+}
+.car-table-docu-color {
+    background-color: #ec6363;
+}
+.car-table-docu-color input {
+    background-color: #ec6363;
+    border: 1px solid #ec6363;
+}
+.car-table-docu-color-yellow {
+    background-color: #f0ad4e;
+}
+.car-table-docu-color-yellow input {
+    background-color: #f0ad4e;
+    border: 1px solid #f0ad4e;
+}
+.car-table-radio-code-color {
+    background-color: #ec6363;
+}
+.car-table-radio-code-color input {
+    background-color: #ec6363;
+    border: 1px solid #ec6363;
+}

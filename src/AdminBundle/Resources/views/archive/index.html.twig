@@ -1,0 +1,107 @@
+{% extends '@Admin/layout.html.twig' %}
+
+{% block title %}{% trans %}Archive{% endtrans %}{% endblock %}
+
+{% block main %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="page-title page-title-custom">
+                <button class="btn btn-success car-edit-button">{% trans %}Edit{% endtrans %}</button>
+                <button class="btn btn-success car-show-hide-button">{% trans %}Show/Hide{% endtrans %}</button>
+                <button class="btn btn-primary archive-only-german">{% trans %}German{% endtrans %}</button>
+                <button class="btn btn-primary archive-only-polish">{% trans %}Polish{% endtrans %}</button>
+                <button class="btn btn-primary archive-only-all">{% trans %}All{% endtrans %}</button>
+                {% if app.user.accessArchiveButton() %}
+                    <button class="btn btn-danger return-from-archive">{% trans %}Return from archive{% endtrans %}</button>
+                {% endif %}
+            </div>
+            <div class="users">
+                <table id="datatable-car" class="table image-table table-bordered table-striped table-condensed table-hover">
+                    <thead>
+                    {% if app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_1') %}
+                        {%- include '@Admin/car/partial/carTable/roleOne.html.twig' -%}
+                    {% elseif app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_2') %}
+                        {%- include '@Admin/car/partial/carTable/roleTwo.html.twig' -%}
+                    {% elseif app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_3') %}
+                        {%- include '@Admin/car/partial/carTable/roleThree.html.twig' -%}
+                    {% elseif app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_4') %}
+                        {%- include '@Admin/car/partial/carTable/roleFour.html.twig' -%}
+                    {% elseif app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_5') %}
+                        {%- include '@Admin/car/partial/carTable/roleFive.html.twig' -%}
+                    {% elseif app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_6') %}
+                        {%- include '@Admin/car/partial/carTable/roleSix.html.twig' -%}
+                    {% elseif app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_7') %}
+                        {%- include '@Admin/car/partial/carTable/roleSeven.html.twig' -%}
+                    {% elseif app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_8') %}
+                        {%- include '@Admin/car/partial/carTable/roleEight.html.twig' -%}
+                    {% elseif app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_9') %}
+                        {%- include '@Admin/car/partial/carTable/roleNine.html.twig' -%}
+                    {% elseif app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_10') %}
+                        {%- include '@Admin/car/partial/carTable/roleTen.html.twig' -%}
+                    {% elseif app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_11') %}
+                        {%- include '@Admin/car/partial/carTable/roleEleven.html.twig' -%}
+                    {% elseif app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_13') %}
+                        {%- include '@Admin/car/partial/carTable/roleThirteen.html.twig' -%}
+                    {% elseif app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_14') %}
+                        {%- include '@Admin/car/partial/carTable/roleFourTeen.html.twig' -%}
+                    {% endif %}
+                    {% if app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_1') %}
+                        {%- include '@Admin/car/partial/carTable/roleOne.html.twig' -%}
+                    {% elseif app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_2') %}
+                        {%- include '@Admin/car/partial/carTable/roleTwo.html.twig' -%}
+                    {% elseif app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_3') %}
+                        {%- include '@Admin/car/partial/carTable/roleThree.html.twig' -%}
+                    {% elseif app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_4') %}
+                        {%- include '@Admin/car/partial/carTable/roleFour.html.twig' -%}
+                    {% elseif app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_5') %}
+                        {%- include '@Admin/car/partial/carTable/roleFive.html.twig' -%}
+                    {% elseif app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_6') %}
+                        {%- include '@Admin/car/partial/carTable/roleSix.html.twig' -%}
+                    {% elseif app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_7') %}
+                        {%- include '@Admin/car/partial/carTable/roleSeven.html.twig' -%}
+                    {% elseif app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_8') %}
+                        {%- include '@Admin/car/partial/carTable/roleEight.html.twig' -%}
+                    {% elseif app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_9') %}
+                        {%- include '@Admin/car/partial/carTable/roleNine.html.twig' -%}
+                    {% elseif app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_10') %}
+                        {%- include '@Admin/car/partial/carTable/roleTen.html.twig' -%}
+                    {% elseif app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_11') %}
+                        {%- include '@Admin/car/partial/carTable/roleEleven.html.twig' -%}
+                    {% elseif app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_13') %}
+                        {%- include '@Admin/car/partial/carTable/roleThirteen.html.twig' -%}
+                    {% elseif app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_14') %}
+                        {%- include '@Admin/car/partial/carTable/roleFourTeen.html.twig' -%}
+                    {% endif %}
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block admin_stylesheets %}
+    <link href="{{ asset('css/datatables.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/fixedColumns.bootstrap4.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('bundles/admin/css/datatable.css') }}" rel="stylesheet">
+    <link href="{{ asset('bundles/admin/css/cars/cars.css') }}" rel="stylesheet">
+{% endblock %}
+{% block admin_javascripts %}
+    <script type="text/javascript">
+        window.ajaxData          = '{{ path('admin_archive_ajaxdata') }}';
+        window.editRoute         = '{{ path('admin_car_edit') }}';
+        window.userLocale        = '{{ app.user.locale }}';
+        window.role              = '{{ app.user.getRole }}';
+        window.changeCheckbox    = '{{ path('admin_car_changecheckbox') }}';
+        window.changeInputField  = '{{ path('admin_car_changeinputfield') }}';
+        window.changeSelectInput = '{{ path('admin_car_changeselectinput') }}';
+        window.getCarFilterData  = '{{ path('admin_ajax_ajaxcarfilters_getcarfilterdata') }}';
+        window.returnFromArchive = '{{ path('admin_archive_returnfromarchive') }}';
+        window.userLocale        = '{{ app.user.locale }}';
+        window.role              = '{{ app.user.getRole }}';
+        window.userId            = '{{ app.user.getId }}';
+        window.vinNumber         = '{{ 'Vin number'|trans }}';
+    </script>
+    <script src="{{ asset('js/datatables.min.js') }}"></script>
+    <script src="{{ asset('js/dataTables.fixedColumns.min.js') }}"></script>
+    <script src="{{ asset('bundles/admin/js/archive/archive.js') }} " type="module"></script>
+{% endblock %}

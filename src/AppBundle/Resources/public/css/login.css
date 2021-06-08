@@ -1,0 +1,32 @@
+.login-form {
+    margin-top: 100px;
+}
+.login-form-title {
+    color: black;
+    font-size: 20px;
+    padding: 25px 0 0 50px;
+    margin-bottom: -20px;
+}
+.login-form-background {
+    padding: 50px 30px 50px 30px;
+}
+.login-button {
+    width: 100%;
+    height: 45px;
+    font-size: 19px !important;
+    background-color: #3f4448;
+    border-color: #3f4448;
+    margin-top: 10px;
+}
+.login-button:hover,
+.login-button:focus,
+.login-button:active {
+    background-color: #1d1e1f !important;
+    border-color: #1d1e1f !important;
+}
+.login-registration-link,
+.login-registration-link:hover,
+.login-registration-link:focus,
+.login-registration-link:active {
+    color: #000;
+}

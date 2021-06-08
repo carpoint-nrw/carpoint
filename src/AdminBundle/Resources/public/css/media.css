@@ -1,0 +1,11 @@
+@media (max-width: 992px) {
+    .username {
+        display: none !important;
+    }
+    .dropdown-user-icon {
+        margin: 0 16px 0 0;
+    }
+    .dropdown-menu {
+        left: -67px;
+    }
+}

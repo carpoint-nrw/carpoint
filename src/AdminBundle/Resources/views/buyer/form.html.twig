@@ -1,0 +1,46 @@
+{{ form_start(form) }}
+<div class="form-group col-md-12">
+    <label for="firmNumber">{% trans %}Firma{% endtrans %}</label>
+    {{ form_widget(form.firmNumber) }}
+</div>
+<div class="form-group col-md-12">
+    <label for="firstName">{% trans %}First name{% endtrans %}</label>
+    {{ form_widget(form.firstName) }}
+</div>
+<div class="form-group col-md-12">
+    <label for="lastName">{% trans %}Last name{% endtrans %}</label>
+    {{ form_widget(form.lastName) }}
+</div>
+<div class="form-group col-md-12">
+    <label for="street">{% trans %}Street{% endtrans %}</label>
+    {{ form_widget(form.street) }}
+</div>
+<div class="form-group col-md-12">
+    <label for="placeIndex">{% trans %}Place Index{% endtrans %}</label>
+    {{ form_widget(form.placeIndex) }}
+</div>
+<div class="form-group col-md-12">
+    <label for="city">{% trans %}City{% endtrans %}</label>
+    {{ form_widget(form.city) }}
+</div>
+<div class="form-group col-md-12">
+    <label for="phoneNumber">{% trans %}Phone number{% endtrans %}</label>
+    {{ form_widget(form.phoneNumber) }}
+</div>
+<div class="form-group col-md-12">
+    <label for="mobileNumber">{% trans %}Mobile number{% endtrans %}</label>
+    {{ form_widget(form.mobileNumber) }}
+</div>
+<div class="form-group col-md-12">
+    <label for="fax">{% trans %}Fax{% endtrans %}</label>
+    {{ form_widget(form.fax) }}
+</div>
+<div class="form-group col-md-12">
+    <label for="email">{% trans %}Email{% endtrans %}</label>
+    {{ form_widget(form.email) }}
+</div>
+<div class="form-group col-md-12">
+    <input class="btn btn-primary" type="submit" value="{% trans %}Create{% endtrans %}" />
+    <a href="{{ path('admin_buyer_index') }}" type="button" class="btn btn-primary">{% trans %}Cancel{% endtrans %}</a>
+</div>
+{{ form_end(form) }}

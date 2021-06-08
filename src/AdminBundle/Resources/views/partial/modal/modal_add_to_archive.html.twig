@@ -1,0 +1,19 @@
+<div class="modal fade" id="modal-for-archive" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h3 class="modal-title" id="exampleModalLabel">
+                    {% trans %}Do you really want to add the car to the archive?{% endtrans %}
+                </h3>
+                <h4 class="custom-modal-body"></h4>
+            </div>
+            <div class="modal-footer">
+                <a href="#" type="button" class="btn btn-danger" id="button-add-archive" data-dismiss="modal">{% trans %}Add to archive{% endtrans %}</a>
+                <button type="button" class="btn" data-dismiss="modal">{% trans %}Cancel{% endtrans %}</button>
+            </div>
+        </div>
+    </div>
+</div>

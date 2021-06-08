@@ -1,0 +1,28 @@
+.open-modal-for-pdf {
+    color: #8c1212;
+    text-decoration: none;
+}
+.open-modal-for-pdf:hover,
+.open-modal-for-pdf:active,
+.open-modal-for-pdf:focus {
+    text-decoration: none;
+    color: #4e0808;
+}
+.car-pdf-modal-header {
+    border-bottom: none;
+}
+.car-pdf-modal-footer {
+    border-top: none;
+}
+.car-pdf-dialog {
+    width: 400px;
+}
+.car-pdf-body-text,
+.car-pdf-body-menu {
+    text-align: center;
+}
+.car-pdf-body-menu {
+    margin-top: 25px;
+    margin-left: 100px;
+    margin-right: 100px;
+}

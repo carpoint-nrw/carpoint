@@ -1,0 +1,11 @@
+.export-excel label input {
+    height: 20px;
+    width: 20px;
+    margin: 0 0 0 -22px !important;
+}
+.form-group {
+    padding-left: 15px !important;
+}
+.export-button {
+    padding-left: 0 !important;
+}

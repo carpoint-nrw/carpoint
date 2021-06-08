@@ -1,0 +1,27 @@
+.registration-title {
+    text-align: center;
+}
+#gender {
+    display: inline-block;
+}
+.radio {
+    display: inline-block;
+    margin-left: 10px;
+}
+.registration-submit {
+    background-color: gray;
+    border-color: gray;
+}
+.registration-submit:hover {
+    background-color: #525151;
+}
+.registration-submit:focus,
+.registration-submit:active {
+    border-color: gray !important;
+    background-color: #525151 !important;
+    outline: none !important;
+}
+.checkbox {
+    margin-top: 0;
+    margin-bottom: 0;
+}

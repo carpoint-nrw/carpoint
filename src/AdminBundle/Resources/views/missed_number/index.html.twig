@@ -1,0 +1,25 @@
+{% extends '@Admin/layout.html.twig' %}
+
+{% block title %}{% trans %}Missed Numbers{% endtrans %}{% endblock %}
+
+{% block main %}
+    <div class="row">
+        <div class="col-md-12">
+            <p><b>Missed numbers:</b></p>
+            {% for number in missed %}
+                <p>{{ number }}</p>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <p><b>Duplicate numbers:</b></p>
+            {% for number in duplicates %}
+                <p>{{ number }}</p>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block admin_stylesheets %}{% endblock %}
+{% block admin_javascripts %}{% endblock %}

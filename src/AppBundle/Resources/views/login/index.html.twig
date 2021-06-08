@@ -1,0 +1,30 @@
+{% extends '@App/layout.html.twig' %}
+
+{% block title %}Login{% endblock %}
+
+{% block main %}
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="login-form">
+                <div class="login-form-title">Händler-Login</div>
+                <div class="login-form-background">
+                    {{- form_start(form) -}}
+                    {{- form_widget(form) -}}
+                    {%- if error is not empty -%}
+                        <p class="alert alert-danger">
+                            {{ error }}
+                        </p>
+                    {%- endif -%}
+                    <a href="{{ path('app_register_index') }}" class="login-registration-link">Jetzt registrieren</a>
+                    <input class="btn btn-primary login-button" type="submit" value="Login" />
+                    {{- form_end(form) -}}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block app_stylesheets %}
+    <link href="{{ asset('bundles/app/css/login.css') }}" rel="stylesheet">
+{% endblock %}
+{% block app_javascripts %}{% endblock %}

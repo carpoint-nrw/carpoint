@@ -1,0 +1,64 @@
+.car-form .row {
+    margin-left: 0 !important;
+}
+.car-text-area {
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 90px;
+}
+.car-info-field {
+    min-height: 34px;
+}
+#showPrice {
+    margin-top: 18px;
+}
+#showPrice div {
+    display: inline-block;
+    margin-left: 10px;
+}
+.car-doc-button {
+    margin-top: 25px;
+}
+.date-form-input input {
+    padding: 6px 0 !important;
+}
+.car-form-row-padding {
+    height: 35px;
+}
+.car-form-required-field {
+    background-color: #f5fd97 !important;
+}
+.upload-file-modal-body {
+    margin-top: 15px;
+}
+.custom-col-md-6 {
+    padding-left: 0;
+}
+.custom-col-md-12-padding-left {
+    padding-left: 0;
+}
+#carUploadFile {
+    width: 70px;
+}
+#additionalWork,
+#notes {
+    min-height: 75px;
+    max-width: 547px;
+    min-width: 547px;
+}
+#registrationCertificateDescription {
+    min-height: 75px;
+    max-width: 265px;
+    min-width: 265px;
+}
+.car-button-left-margin {
+    margin-left: 85px;
+}
+.select2-selection--single {
+    height: 34px !important;
+    border: 1px solid #ccc !important;
+}
+.select2-selection__rendered {
+    height: 100%;
+    margin-top: 2px;
+}

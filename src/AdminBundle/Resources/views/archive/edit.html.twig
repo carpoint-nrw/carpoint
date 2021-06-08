@@ -1,0 +1,116 @@
+{% extends '@Admin/layout.html.twig' %}
+
+{% block title %}{% trans %}Edit car{% endtrans %}{% endblock %}
+
+{% set formType = 'edit' %}
+
+{% block main %}
+    <div class="row">
+        <div class="col-md-12 car-form">
+            <div>
+                <h2>{% trans %}Edit car{% endtrans %}</h2>
+            </div>
+            <div>
+                {{ form_start(form) }}
+                {% if app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_1') %}
+                    {%- include '@Admin/car/partial/newAndEdit/roleOne.html.twig' -%}
+                {% elseif app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_2') %}
+                    {%- include '@Admin/car/partial/newAndEdit/roleTwo.html.twig' -%}
+                {% elseif app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_3') %}
+                    {%- include '@Admin/car/partial/newAndEdit/roleThree.html.twig' -%}
+                {% elseif app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_4') %}
+                    {%- include '@Admin/car/partial/newAndEdit/roleFour.html.twig' -%}
+                {% elseif app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_5') %}
+                    {%- include '@Admin/car/partial/newAndEdit/roleFive.html.twig' -%}
+                {% elseif app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_6') %}
+                    {%- include '@Admin/car/partial/newAndEdit/roleSix.html.twig' -%}
+                {% elseif app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_7') %}
+                    {%- include '@Admin/car/partial/newAndEdit/roleSeven.html.twig' -%}
+                {% elseif app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_8') %}
+                    {%- include '@Admin/car/partial/newAndEdit/roleEight.html.twig' -%}
+                {% elseif app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_9') %}
+                    {%- include '@Admin/car/partial/newAndEdit/roleNine.html.twig' -%}
+                {% elseif app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_10') %}
+                    {%- include '@Admin/car/partial/newAndEdit/roleTen.html.twig' -%}
+                {% elseif app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_11') %}
+                    {%- include '@Admin/car/partial/newAndEdit/roleEleven.html.twig' -%}
+                {% elseif app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_12') %}
+                    {%- include '@Admin/car/partial/newAndEdit/roleTwelve.html.twig' -%}
+                {% elseif app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_13') %}
+                    {%- include '@Admin/car/partial/newAndEdit/roleThirteen.html.twig' -%}
+                {% elseif app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_14') %}
+                    {%- include '@Admin/car/partial/newAndEdit/roleFourTeen.html.twig' -%}
+                {% endif %}
+
+                    {% if customError is defined %}
+                        <div class="form-group col-md-12">
+                            <p class="alert alert-danger">
+                                {{ customError }}
+                            </p>
+                        </div>
+                    {% elseif error != 0 %}
+                        <div class="form-group col-md-12">
+                            <p class="alert alert-danger">
+                                Data was not saved, check valid is the data
+                            </p>
+                        </div>
+                    {% endif %}
+
+                    {%- if error != 0 -%}
+                        <div class="form-group col-md-12">
+                            <p class="alert alert-danger">
+                                {% if customError is defined %}
+                                    {{ customError }}
+                                {% else %}
+                                    Data was not saved, check valid is the data
+                                {% endif %}
+                            </p>
+                        </div>
+                    {%- endif -%}
+
+                {{ form_end(form) }}
+            </div>
+            {%- include '@Admin/partial/modal/warning_modal.html.twig' -%}
+            {%- include '@Admin/partial/modal/modal_for_delete_item.html.twig' with {'type': 'Do you want to delete this file?'|trans} -%}
+            {%- include '@Admin/partial/modal/car_upload_file.html.twig' -%}
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block admin_javascripts %}
+    <script type="text/javascript">
+      window.ajaxGetModel                 = '{{ path('admin_ajax_ajax_getmodel') }}';
+      window.ajaxGetPlace                 = '{{ path('admin_ajax_ajax_getplacebyvendor') }}';
+      window.ajaxGetVersion               = '{{ path('admin_ajax_ajax_getversion') }}';
+      window.ajaxGetStandartComplectation = '{{ path('admin_ajax_ajax_getstandartcomplectation') }}';
+      window.checkVinNumber               = '{{ path('admin_ajax_ajax_checkvinnumber') }}';
+      window.formType                     = 'edit';
+      window.userLocale                   = '{{ app.user.locale }}';
+      window.carId                        = '{{ carId }}';
+      window.currency                     = '{{ currency }}';
+      window.userRole                     = '{{ app.user.getRole }}';
+
+      window.fileCarId            = '{{ carId }}';
+      window.carFilesRelativePath = '{{ car_files_relative_path }}';
+      window.fileAjaxData         = '{{ path('admin_carfile_ajaxdata') }}';
+      window.fileUploadRoute      = '{{ path('admin_carfile_upload') }}';
+      window.fileDeleteRoute      = '{{ path('admin_carfile_delete') }}';
+      window.getCarFileTypes      = '{{ path('admin_ajax_ajax_getfiletypes') }}';
+      window.carClearData         = '{{ path('admin_ajax_ajax_clearcardata') }}';
+      window.getCarFirmNames      = '{{ path('admin_ajax_ajaxselect2_getcarfirmnames') }}';
+      window.getCarUserData       = '{{ path('admin_ajax_ajax_getcaruserdata') }}';
+    </script>
+    <script src="{{ asset('bundles/admin/js/car/carForms.js') }} " type="module"></script>
+    <script src="{{ asset('bundles/admin/js/car/formRequired.js') }} " type="module"></script>
+    <script src="{{ asset('bundles/admin/js/car/backlight.js') }} " type="module"></script>
+    <script src="{{ asset('js/datatables.min.js') }}"></script>
+    <script src="{{ asset('bundles/admin/js/car/carFile.js') }} " type="module"></script>
+    <script src="{{ asset('js/select2.full.min.js') }}"></script>
+    <script src="{{ asset('bundles/admin/js/car/carSelect2.js') }} " type="module"></script>
+{% endblock %}
+{% block admin_stylesheets %}
+    <link href="{{ asset('bundles/admin/css/cars/carForm.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/datatables.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/select2.min.css') }}" rel="stylesheet">
+{% endblock %}

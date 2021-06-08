@@ -1,0 +1,16 @@
+{% extends '@Admin/layout.html.twig' %}
+
+{% block title %}{% trans %}Edit buyer{% endtrans %}{% endblock %}
+
+{% block main %}
+    <div class="row">
+        <div class="col-md-12">
+            <div>
+                <h2>{% trans %}Edit buyer{% endtrans %}</h2>
+            </div>
+            <div>
+                {%- include '@Admin/buyer/form.html.twig' -%}
+            </div>
+        </div>
+    </div>
+{% endblock %}

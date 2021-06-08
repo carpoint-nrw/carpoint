@@ -1,0 +1,78 @@
+{% extends '@Admin/layout.html.twig' %}
+
+{% block title %}{% trans %}Export Excel{% endtrans %}{% endblock %}
+
+{% form_theme form _self %}
+
+{% block checkbox_radio_label -%}
+    {% if form.vars.id != '' %}
+        <div class="checkbox">
+            <label for="{{ form.vars.name }}">
+                <input type="checkbox" id="{{ form.vars.id }}" name="{{ form.vars.name }}" {% if form.vars.attr.checked is defined %}checked="checked"{% endif %}>
+                {{ form.vars.label|trans }}
+            </label>
+        </div>
+    {% endif %}
+{%- endblock checkbox_radio_label -%}
+
+{% block main %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="export-excel-title">
+                {% trans %}Select columns{% endtrans %}
+            </div>
+            <div class="export-excel">
+                {{ form_start(form) }}
+                    {% if app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_1') %}
+                        {%- include '@Admin/export_excel/type/roleOne.html.twig' -%}
+                    {% elseif app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_2') %}
+                        {%- include '@Admin/export_excel/type/roleTwo.html.twig' -%}
+                    {% elseif app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_3') %}
+                        {%- include '@Admin/export_excel/type/roleThree.html.twig' -%}
+                    {% elseif app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_4') %}
+                        {%- include '@Admin/export_excel/type/roleFour.html.twig' -%}
+                    {% elseif app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_5') %}
+                        {%- include '@Admin/export_excel/type/roleFive.html.twig' -%}
+                    {% elseif app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_6') %}
+                        {%- include '@Admin/export_excel/type/roleSix.html.twig' -%}
+                    {% elseif app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_7') %}
+                        {%- include '@Admin/export_excel/type/roleSeven.html.twig' -%}
+                    {% elseif app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_8') %}
+                        {%- include '@Admin/export_excel/type/roleEight.html.twig' -%}
+                    {% elseif app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_9') %}
+                        {%- include '@Admin/export_excel/type/roleNine.html.twig' -%}
+                    {% elseif app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_10') %}
+                        {%- include '@Admin/export_excel/type/roleTen.html.twig' -%}
+                    {% elseif app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_11') %}
+                        {%- include '@Admin/export_excel/type/roleEleven.html.twig' -%}
+                    {% elseif app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_12') %}
+                        {%- include '@Admin/export_excel/type/roleTwelve.html.twig' -%}
+                    {% elseif app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_13') %}
+                        {%- include '@Admin/export_excel/type/roleThirteen.html.twig' -%}
+                    {% elseif app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_14') %}
+                        {%- include '@Admin/export_excel/type/roleFourTeen.html.twig' -%}
+                    {% endif %}
+
+                <div class="form-group col-md-2 export-button">
+                    {{ form_widget(form.language) }}
+                </div>
+                <div class="form-group col-md-12 export-button">
+                    <input class="btn btn-primary" type="submit" value="{% trans %}Export{% endtrans %}" />
+                    <a href="{{ path('admin_car_index') }}" type="button" class="btn btn-primary">{% trans %}Cancel{% endtrans %}</a>
+                </div>
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block admin_stylesheets %}
+    <link href="{{ asset('bundles/admin/css/export.css') }}" rel="stylesheet">
+{% endblock %}
+{% block admin_javascripts %}
+    <script type="text/javascript">
+	  window.exportExcel = '{{ export_excel_relative }}';
+	  window.fileName    = '{{ fileName }}';
+    </script>
+    <script src="{{ asset('bundles/admin/js/export/export.js') }} " type="module"></script>
+{% endblock %}

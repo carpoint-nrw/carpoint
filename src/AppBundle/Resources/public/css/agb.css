@@ -1,0 +1,23 @@
+.agb-main {
+    overflow: hidden;
+}
+.agb-body {
+    overflow-y:scroll;
+    height: 85vh;
+}
+.agb-body::-webkit-scrollbar {
+    width: 7px;
+    background-color: #fff;
+}
+.agb-body::-webkit-scrollbar-thumb {
+    background-color: #000000ad;
+}
+.agb-body::-webkit-scrollbar-track {
+    border-bottom: 1px solid rgba(0,0,0,.15);
+    border-top: 1px solid rgba(0,0,0,.15);
+    border-right: 1px solid rgba(0,0,0,.15);
+    margin-top: -1px;
+}
+.agb-tel-margin {
+    margin-top: 20px;
+}

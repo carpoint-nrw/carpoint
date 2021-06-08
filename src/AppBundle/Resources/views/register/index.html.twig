@@ -1,0 +1,133 @@
+{% extends '@App/layout.html.twig' %}
+
+{% block title %}Registrierung{% endblock %}
+
+{% form_theme form _self %}
+
+{% block checkbox_radio_label -%}
+    {% if form.vars.id != '' %}
+    {% if form.vars.label == 'Mann' %}
+        <label for="gender_0" class="required">
+            <input type="radio" id="gender_0" name="gender" required="required" value="Male" checked="checked">{{ form.vars.value }}
+        </label>
+    {% endif %}
+    {% if form.vars.label == 'Frau' %}
+        <label for="gender_1" class="required">
+            <input type="radio" id="gender_1" name="gender" required="required" value="Female">{{ form.vars.value }}
+        </label>
+    {% endif %}
+        {% if form.vars.label == 'AGB' %}
+            <div class="checkbox">
+                <label for="{{ form.vars.name }}" class="required">
+                    <input type="checkbox" id="{{ form.vars.id }}" name="{{ form.vars.name }}" required="required">
+                    Ich habe die <a href="{{ path('app_agb_index') }}">Allgemeinen Geschäftsbedingungen</a> gelesen und akzeptiere sie.
+                </label>
+            </div>
+        {% endif %}
+        {% if form.vars.label == 'daten' %}
+            <div class="checkbox">
+                <label for="{{ form.vars.name }}" class="required">
+                    <input type="checkbox" id="{{ form.vars.id }}" name="{{ form.vars.name }}" required="required">
+                    Ich habe die <a href="{{ path('app_daten_index') }}">Datenschutzbestimmungen</a> zur Kenntnis genommen und akzeptiere sie.
+                </label>
+            </div>
+        {% endif %}
+    {% endif %}
+{%- endblock checkbox_radio_label -%}
+
+{% block main %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="registration-title">
+                <h1>Registrierung</h1>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            {{ form_start(form) }}
+            <div class="form-group col-md-12">
+                <label for="gender">{% trans %}Anrede*{% endtrans %}</label>
+                {{ form_widget(form.gender) }}
+            </div>
+            <div class="form-group col-md-6">
+                <label for="firstName">{% trans %}Vorname*{% endtrans %}</label>
+                {{ form_widget(form.firstName) }}
+            </div>
+            <div class="form-group col-md-6">
+                <label for="lastName">{% trans %}Nachname*{% endtrans %}</label>
+                {{ form_widget(form.lastName) }}
+            </div>
+            <div class="form-group col-md-6">
+                <label for="firmNumber">{% trans %}Firmenname*{% endtrans %}</label>
+                {{ form_widget(form.firmNumber) }}
+            </div>
+            <div class="form-group col-md-6">
+                <label for="street">{% trans %}Strasse/Nr.*{% endtrans %}</label>
+                {{ form_widget(form.street) }}
+            </div>
+            <div class="form-group col-md-6">
+                <label for="placeIndex">{% trans %}Postleitzahl*{% endtrans %}</label>
+                {{ form_widget(form.placeIndex) }}
+            </div>
+            <div class="form-group col-md-6">
+                <label for="city">{% trans %}Ort*{% endtrans %}</label>
+                {{ form_widget(form.city) }}
+            </div>
+            <div class="form-group col-md-12">
+                <label for="country">{% trans %}Land*{% endtrans %}</label>
+                {{ form_widget(form.country) }}
+            </div>
+            <div class="form-group col-md-6">
+                <label for="phoneNumber">{% trans %}Tel. Nummer{% endtrans %}</label>
+                {{ form_widget(form.phoneNumber) }}
+            </div>
+            <div class="form-group col-md-6">
+                <label for="mobileNumber">{% trans %}Mobile Number*{% endtrans %}</label>
+                {{ form_widget(form.mobileNumber) }}
+            </div>
+            <div class="form-group col-md-6">
+                <label for="fax">{% trans %}Fax Nummer{% endtrans %}</label>
+                {{ form_widget(form.fax) }}
+            </div>
+            <div class="form-group col-md-6">
+                <label for="ustIdNr">{% trans %}USt-IdNr.*{% endtrans %}</label>
+                {{ form_widget(form.ustIdNr) }}
+            </div>
+            <div class="form-group col-md-6">
+                <label for="email">{% trans %}E-Mail-Adresse*{% endtrans %}</label>
+                {{ form_widget(form.email.first) }}
+            </div>
+            <div class="form-group col-md-6">
+                <label for="email">{% trans %}E-Mail wiederholen*{% endtrans %}</label>
+                {{ form_widget(form.email.second) }}
+            </div>
+            <div class="form-group col-md-6">
+                <label for="password">{% trans %}Passwort*{% endtrans %}</label>
+                {{ form_widget(form.password.first) }}
+            </div>
+            <div class="form-group col-md-6">
+                <label for="password">{% trans %}Passwort bestätigen*{% endtrans %}</label>
+                {{ form_widget(form.password.second) }}
+            </div>
+            <div class="form-group col-md-12">
+                {{ form_widget(form.agb) }}
+            </div>
+            <div class="form-group col-md-12">
+                {{ form_widget(form.daten) }}
+            </div>
+            <div class="form-group col-md-12">
+                {{ form_errors(form) }}
+            </div>
+            <div class="form-group col-md-12">
+                <input class="btn btn-primary registration-submit" type="submit" value="{% trans %}Weiter{% endtrans %}" />
+            </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}
+
+{% block app_stylesheets %}
+    <link href="{{ asset('bundles/app/css/registration.css') }}" rel="stylesheet">
+{% endblock %}
+{% block app_javascripts %}{% endblock %}

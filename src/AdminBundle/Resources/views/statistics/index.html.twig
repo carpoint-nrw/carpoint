@@ -1,0 +1,96 @@
+{% extends '@Admin/layout.html.twig' %}
+
+{% block title %}{% trans %}Statistics{% endtrans %}{% endblock %}
+
+{% block main %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="page-title page-title-custom">
+                <button class="btn btn-success car-show-hide-button">{% trans %}Show/Hide{% endtrans %}</button>
+                <button class="btn btn-success car-statistic-export-excel">{% trans %}Export to Excel{% endtrans %}</button>
+                <button class="btn btn-info car-selection-button">{% trans %}Multiply selection{% endtrans %}</button>
+                <button class="btn btn-info car-select-all-button">{% trans %}Select all{% endtrans %}</button>
+                <button class="btn btn-dark statistic-missed-number"><a href="{{ path('admin_missednumber_index') }}">Check Rech. nr.</a></button>
+                <button class="btn btn-dark statistic-export-csv">Export CSV</button>
+                <div class="statistic-summe">
+                    <span class="statistic-summe-name">EK Netto: </span>
+                    <span class="statistic-summe-value ekNetto-summe"></span>
+                </div>
+                <div class="statistic-summe">
+                    <span class="statistic-summe-name">EK Brutto: </span>
+                    <span class="statistic-summe-value ekBrutto-summe"></span>
+                </div>
+                <div class="statistic-summe">
+                    <span class="statistic-summe-name">USt.: </span>
+                    <span class="statistic-summe-value ust-summe"></span>
+                </div>
+                <div class="statistic-summe">
+                    <span class="statistic-summe-name">VK Netto: </span>
+                    <span class="statistic-summe-value vkNetto-summe"></span>
+                </div>
+                <div class="statistic-summe">
+                    <span class="statistic-summe-name">VK Brutto: </span>
+                    <span class="statistic-summe-value vkBrutto-summe"></span>
+                </div>
+                <div class="statistic-summe">
+                    <span class="statistic-summe-name">Gewinn: </span>
+                    <span class="statistic-summe-value gewinn-summe"></span>
+                </div>
+            </div>
+            <div class="users">
+                <table id="datatable-car" class="table image-table table-bordered table-striped table-condensed table-hover">
+                    <thead>
+                    {% if app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_1') %}
+                        {%- include '@Admin/statistics/partial/roleOne.html.twig' -%}
+                    {% endif %}
+                    {% if app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_15') %}
+                        {%- include '@Admin/statistics/partial/roleOne.html.twig' -%}
+                    {% endif %}
+                    {% if app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_11') %}
+                        {%- include '@Admin/statistics/partial/roleOne.html.twig' -%}
+                    {% endif %}
+                    {% if app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_8') %}
+                        {%- include '@Admin/statistics/partial/roleOne.html.twig' -%}
+                    {% endif %}
+                    {% if app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_1') %}
+                        {%- include '@Admin/statistics/partial/roleOne.html.twig' -%}
+                    {% endif %}
+                    {% if app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_15') %}
+                        {%- include '@Admin/statistics/partial/roleOne.html.twig' -%}
+                    {% endif %}
+                    {% if app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_11') %}
+                        {%- include '@Admin/statistics/partial/roleOne.html.twig' -%}
+                    {% endif %}
+                    {% if app.user.getRole == classConstant('AdminBundle\\Enum\\UserRoleEnum', 'ROLE_ADMIN_8') %}
+                        {%- include '@Admin/statistics/partial/roleOne.html.twig' -%}
+                    {% endif %}
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block admin_stylesheets %}
+    <link href="{{ asset('css/datatables.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/fixedColumns.bootstrap4.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('bundles/admin/css/datatable.css') }}" rel="stylesheet">
+    <link href="{{ asset('bundles/admin/css/cars/cars.css') }}" rel="stylesheet">
+    <link href="{{ asset('bundles/admin/css/statistics.css') }}" rel="stylesheet">
+{% endblock %}
+{% block admin_javascripts %}
+    <script type="text/javascript">
+      window.ajaxData                   = '{{ path('admin_statistics_ajaxdata') }}';
+      window.changeInputFieldStatistics = '{{ path('admin_statistics_changeinputfield') }}';
+      window.getCarFilterData           = '{{ path('admin_ajax_ajaxcarfilters_getcarstatisticfilterdata') }}';
+      window.statisticSumme             = '{{ path('admin_statistics_getstatisticsumme') }}';
+      window.exportCsv                  = '{{ path('admin_statistics_exportcsv') }}';
+      window.exportExcel                = '{{ path('admin_exportexcel_exportstatistic') }}';
+      window.editRoute                  = '{{ path('admin_statistics_edit') }}';
+      window.exportExcelFile            = '{{ export_excel_relative }}';
+      window.userLocale                 = '{{ app.user.locale }}';
+    </script>
+    <script src="{{ asset('js/datatables.min.js') }}"></script>
+    <script src="{{ asset('js/dataTables.fixedColumns.min.js') }}"></script>
+    <script src="{{ asset('bundles/admin/js/statistics/statistics.js') }} " type="module"></script>
+{% endblock %}

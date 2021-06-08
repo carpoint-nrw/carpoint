@@ -1,0 +1,29 @@
+{% extends '@Admin/layout.html.twig' %}
+
+{% block title %}Car File Type{% endblock %}
+
+{% block main %}
+    <div class="row">
+        <div class="col-md-12">
+            <div>
+                <h2>{{ type|trans  ~ ' ' ~ 'car file type'|trans }}</h2>
+            </div>
+            <div>
+                {{ form_start(form) }}
+                <div class="form-group col-md-12">
+                    <label for="type">{% trans %}Type{% endtrans %}</label>
+                    {{ form_widget(form.type) }}
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="carFilePermission">{% trans %}Car File Permission{% endtrans %}</label>
+                    {{ form_widget(form.carFilePermission) }}
+                </div>
+                <div class="form-group col-md-12">
+                    <input class="btn btn-primary" type="submit" value="{% trans %}Create{% endtrans %}" />
+                    <a href="{{ path('admin_carfiletype_index') }}" type="button" class="btn btn-primary">{% trans %}Cancel{% endtrans %}</a>
+                </div>
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

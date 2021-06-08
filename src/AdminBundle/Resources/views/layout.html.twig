@@ -1,0 +1,176 @@
+{% extends 'base.html.twig' %}
+
+{% import _self as macros %}
+
+{% block body %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="header">
+                <div class="col-xs-2">
+                    <div class="header-left">
+                        <a href="{{ path('admin_car_index') }}">{% trans %}Carpoint{% endtrans %}</a>
+                    </div>
+                    <div class="sidebar-size-icon">
+                        <i class="fas fa-angle-double-right"></i>
+{#                        <i class="fas fa-angle-double-left"></i>#}
+                    </div>
+                </div>
+                <div class="col-xs-offset-5 col-xs-5">
+                    <div class="header-right">
+                        <div class="dropdown">
+                            <div class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
+                                <div class="dropdown-user-icon">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="username">{{ app.user.email }}</div>
+                                <div class="dropdown-button-line"></div>
+                                <div class="dropdown-open-icon">
+                                    <i class="fas fa-arrow-down dropdown-open-menu"></i>
+                                </div>
+                            </div>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="{{ path('admin_user_editprofile') }}">
+                                    <div class="dropdown-item-element">
+                                        <i class="fas fa-sign-out-alt dropdown-profile-icon"></i>
+                                        <span>{% trans %}Profile{% endtrans %}</span>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item" href="{{ path('admin_security_logout') }}">
+                                    <div class="dropdown-item-element">
+                                        <i class="fas fa-sign-out-alt"></i>
+                                        <span>{% trans %}Logout{% endtrans %}</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 sidebar-main aside-padding">
+                <aside class="sidebar sidebar-col">
+                    <div class="sidebar-nav">
+                        {% if app.user.accessToCars %}
+                            {{- macros.sidebarLink('admin_car_index', 'Cars') -}}
+                        {% endif %}
+                        {% if app.user.accessEditUsers %}
+                            {{- macros.sidebarLink('admin_user_index', 'Users') -}}
+                        {% endif %}
+                        {% if app.user.accessEditCarHistory %}
+                            {{- macros.sidebarLink('admin_caredithistory_index', 'Car Edit History') -}}
+                        {% endif %}
+                        {% if app.user.accessArchive %}
+                            {{- macros.sidebarLink('admin_archive_index', 'Archive') -}}
+                        {% endif %}
+                        {% if app.user.accessDump %}
+                            {{- macros.sidebarLink('admin_databasedump_index', 'Database Dump') -}}
+                        {% endif %}
+                        {% if app.user.accessUser %}
+                            {{- macros.sidebarLink('admin_buyeruser_index', 'Buyers') -}}
+                        {% endif %}
+                        {% if app.user.accessCurrency %}
+                            {{- macros.sidebarLink('admin_currency_index', 'Currency Rate') -}}
+                        {% endif %}
+                        {% if app.user.accessCarFileType %}
+                            {{- macros.sidebarLink('admin_carfiletype_index', 'Car File Type') -}}
+                        {% endif %}
+                        {% if app.user.accessToStatistics %}
+                            {{- macros.sidebarLink('admin_statistics_index', 'Statistics') -}}
+                        {% endif %}
+                        {% if app.user.accessToInvoices %}
+                            {{- macros.sidebarLink('admin_invoice_index', 'Rechnung') -}}
+                        {% endif %}
+                        {% if app.user.accessReferences %}
+                            <a data-toggle="collapse" href="#references" aria-expanded="false" aria-controls="references">
+                                <i class="fas fa-angle-right sidebar-icon"></i>
+                                <span>{% trans %}References{% endtrans %}</span>
+                            </a>
+                            {% if app.request.attributes.get('_route') in [
+                                'admin_buyer_index', 'admin_references_customer_index',
+                                'admin_references_forwarder_index', 'admin_references_location_index',
+                                'admin_references_notes_index', 'admin_references_place_index',
+                                'admin_references_targetunload_index', 'admin_references_vendor_index',
+                                'admin_references_brand_index', 'admin_references_model_index',
+                                'admin_references_version_index', 'admin_references_color_index',
+                                'admin_references_standartcomplectation_index',
+                                'admin_references_bodytype_index', 'admin_references_carstatus_index',
+                                'admin_references_clientstatus_index', 'admin_references_fuel_index',
+                                'admin_references_ort_index', 'admin_references_paymentcondition_index',
+                                'admin_references_paymenttype_index', 'admin_references_taxtype_index',
+                                'admin_references_placeofissue_index', 'admin_references_registrationcertificate_index'
+                            ] %}
+                                {% set class = 'in' %}
+                            {% else %}
+                                {% set class = '' %}
+                            {% endif %}
+                            <div class="collapse references {{ class }}" id="references">
+                                {{- macros.sidebarLinkReference('admin_references_brand_index', 'Brand') -}}
+                                {{- macros.sidebarLinkReference('admin_references_model_index', 'Model') -}}
+                                {{- macros.sidebarLinkReference('admin_references_version_index', 'Version') -}}
+                                {{- macros.sidebarLinkReference('admin_references_color_index', 'Color') -}}
+                                {{- macros.sidebarLinkReference('admin_references_standartcomplectation_index', 'Standart complectation') -}}
+                                {{- macros.sidebarLinkReference('admin_references_customer_index', 'Customers') -}}
+                                {{- macros.sidebarLinkReference('admin_references_forwarder_index', 'Forwarders') -}}
+                                {{- macros.sidebarLinkReference('admin_references_location_index', 'Locations') -}}
+                                {{- macros.sidebarLinkReference('admin_references_place_index', 'Places') -}}
+                                {{- macros.sidebarLinkReference('admin_references_targetunload_index', 'Target Unload') -}}
+                                {{- macros.sidebarLinkReference('admin_references_vendor_index', 'Vendors') -}}
+                                {{- macros.sidebarLinkReference('admin_references_bodytype_index', 'Fahrzeugart') -}}
+                                {{- macros.sidebarLinkReference('admin_references_carstatus_index', 'Car Status') -}}
+                                {{- macros.sidebarLinkReference('admin_references_clientstatus_index', 'Client Status') -}}
+                                {{- macros.sidebarLinkReference('admin_references_fuel_index', 'Fuel') -}}
+                                {{- macros.sidebarLinkReference('admin_references_ort_index', 'Ort') -}}
+                                {{- macros.sidebarLinkReference('admin_references_paymentcondition_index', 'Payment Condition') -}}
+                                {{- macros.sidebarLinkReference('admin_references_paymenttype_index', 'Payment Type') -}}
+                                {{- macros.sidebarLinkReference('admin_references_taxtype_index', 'Tax Type') -}}
+                                {{- macros.sidebarLinkReference('admin_references_placeofissue_index', 'Auslieferungsort') -}}
+                                {{- macros.sidebarLinkReference('admin_references_registrationcertificate_index', 'Registration certificate') -}}
+                            </div>
+                        {% endif %}
+                    </div>
+                </aside>
+            </div>
+            <div class="col-md-10 main-padding">
+                <div class="main">
+                    {% block main %}{% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{%- macro sidebarLink(route, title) -%}
+    <a href="{{ path(route) }}" class="{% if route == app.request.attributes.get('_route') %}active{% endif %}">
+        <i class="fas fa-angle-right sidebar-icon"></i>
+        <span>{{ title|trans }}</span>
+    </a>
+{%- endmacro -%}
+
+{%- macro sidebarLinkReference(route, title) -%}
+    {% if app.user.accessReference(title) %}
+        <a href="{{ path(route) }}" class="{% if route == app.request.attributes.get('_route') %}active{% endif %}">
+            <i class="fas fa-angle-right sidebar-icon"></i>
+            <span>{{ title|trans }}</span>
+        </a>
+    {% endif %}
+{%- endmacro -%}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link href="{{ asset('bundles/admin/css/main.css') }}" rel="stylesheet">
+    <link href="{{ asset('bundles/admin/css/media.css') }}" rel="stylesheet">
+    {% block admin_stylesheets %}{% endblock %}
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript">
+	  window.changeSidebar = '{{ path('admin_ajax_ajax_changesidebar') }}';
+	  window.sidebar = '{{ app.user.isSidebar }}';
+	  window.userId = '{{ app.user.getId }}';
+    </script>
+    <script src="{{ asset('bundles/admin/js/app.js') }}"></script>
+    {% block admin_javascripts %}{% endblock %}
+{% endblock %}

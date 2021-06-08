@@ -1,0 +1,53 @@
+{% extends '@Admin/layout.html.twig' %}
+
+{% block title %}{% trans %}Rechnung{% endtrans %}{% endblock %}
+
+{% block main %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="invoice-menu">
+                <div class="invoice-sort-year">
+                    <div class="form-group">
+                        <select class="form-control sort-year-select"></select>
+                    </div>
+                </div>
+                <div class="invoice-sort-month">
+                    <div class="form-group">
+                        <select class="form-control sort-month-select"></select>
+                    </div>
+                </div>
+                <div class="invoice-download">
+                    <button class="btn btn-success invoice-download-files">{% trans %}Download{% endtrans %}</button>
+                </div>
+            </div>
+            <div class="invoices">
+                <table id="datatable-invoice" class="table image-table table-bordered table-striped table-condensed table-hover">
+                    <thead>
+                        <tr>
+                            <th>{% trans %}File name{% endtrans %}</th>
+                            <th>{% trans %}Rechnungsdatum{% endtrans %}</th>
+                            <th>{% trans %}Open{% endtrans %}</th>
+                            <th>{% trans %}Download{% endtrans %}</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block admin_stylesheets %}
+    <link href="{{ asset('css/datatables.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('bundles/admin/css/datatable.css') }}" rel="stylesheet">
+{% endblock %}
+{% block admin_javascripts %}
+    <script type="text/javascript">
+	  window.ajaxData               = '{{ path('admin_invoice_ajaxinvoice') }}';
+	  window.filterData             = '{{ path('admin_invoice_getfilterdata') }}';
+	  window.downloadFiles          = '{{ path('admin_invoice_downloadfiles') }}';
+	  window.userLocale             = '{{ app.user.locale }}';
+      window.carInvoiceRelativePath = '{{ car_invoice_relative_path }}';
+    </script>
+    <script src="{{ asset('js/datatables.min.js') }}"></script>
+    <script src="{{ asset('bundles/admin/js/invoice/invoice.js') }} " type="module"></script>
+{% endblock %}

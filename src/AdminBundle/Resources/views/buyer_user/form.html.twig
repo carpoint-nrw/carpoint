@@ -1,0 +1,73 @@
+{{ form_start(form) }}
+<div class="form-group col-md-12">
+    <label for="gender">{% trans %}Anrede*{% endtrans %}</label>
+    {{ form_widget(form.gender) }}
+</div>
+<div class="form-group col-md-12">
+    <label for="targetUnload">{% trans %}Lieferort{% endtrans %}</label>
+    {{ form_widget(form.targetUnload) }}
+</div>
+<div class="form-group col-md-12">
+    <label for="firstName">{% trans %}Vorname*{% endtrans %}</label>
+    {{ form_widget(form.firstName) }}
+</div>
+<div class="form-group col-md-12">
+    <label for="lastName">{% trans %}Nachname*{% endtrans %}</label>
+    {{ form_widget(form.lastName) }}
+</div>
+<div class="form-group col-md-12">
+    <label for="email">{% trans %}E-Mail-Adresse*{% endtrans %}</label>
+    {{ form_widget(form.email) }}
+</div>
+<div class="form-group col-md-12">
+    <label for="firmNumber">{% trans %}Firmenname*{% endtrans %}</label>
+    {{ form_widget(form.firmNumber) }}
+</div>
+<div class="form-group col-md-12">
+    <label for="ustIdNr">{% trans %}USt-IdNr.*{% endtrans %}</label>
+    {{ form_widget(form.ustIdNr) }}
+</div>
+<div class="form-group col-md-12">
+    <label for="street">{% trans %}Strasse/Nr.*{% endtrans %}</label>
+    {{ form_widget(form.street) }}
+</div>
+<div class="form-group col-md-12">
+    <label for="placeIndex">{% trans %}Postleitzahl*{% endtrans %}</label>
+    {{ form_widget(form.placeIndex) }}
+</div>
+<div class="form-group col-md-12">
+    <label for="city">{% trans %}Ort*{% endtrans %}</label>
+    {{ form_widget(form.city) }}
+</div>
+<div class="form-group col-md-12">
+    <label for="country">{% trans %}Land*{% endtrans %}</label>
+    {{ form_widget(form.country) }}
+</div>
+<div class="form-group col-md-12">
+    <label for="phoneNumber">{% trans %}Phone number{% endtrans %}</label>
+    {{ form_widget(form.phoneNumber) }}
+</div>
+<div class="form-group col-md-12">
+    <label for="mobileNumber">{% trans %}Mobile number*{% endtrans %}</label>
+    {{ form_widget(form.mobileNumber) }}
+</div>
+<div class="form-group col-md-12">
+    <label for="fax">{% trans %}Fax{% endtrans %}</label>
+    {{ form_widget(form.fax) }}
+</div>
+<div class="form-group col-md-12">
+    <label for="password">{% trans %}Password*{% endtrans %}</label>
+    {{ form_widget(form.password) }}
+</div>
+<div class="form-group col-md-12">
+    <label for="abbreviation">{% trans %}Abbreviation{% endtrans %}</label>
+    {{ form_widget(form.abbreviation) }}
+</div>
+<div class="form-group col-md-12">
+    {{ form_errors(form) }}
+</div>
+<div class="form-group col-md-12">
+    <input class="btn btn-primary" type="submit" value="{% trans %}Create{% endtrans %}" />
+    <a href="{{ path('admin_buyer_index') }}" type="button" class="btn btn-primary">{% trans %}Cancel{% endtrans %}</a>
+</div>
+{{ form_end(form) }}
