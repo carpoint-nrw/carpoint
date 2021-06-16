@@ -24,3 +24,5 @@ web/files
 !web/files/carFiles/.gitkeep
 !web/exportPdf/invoices/.gitkeep
 !web/files/temp/.gitkeep
+/nbproject/private/
+nbproject/

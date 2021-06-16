@@ -9,11 +9,11 @@ use Symfony\Component\HttpFoundation\Request;
 /**
  * Class ColorController
  *
- * @Route("/color")
+ * @Route("/base-color")
  *
  * @package AdminBundle\Controller\References
  */
-class ColorController extends AbstractReferencesController
+class BaseColorController extends AbstractReferencesController
 {
     /**
      * @Route("/ajax-data")
@@ -46,9 +46,7 @@ class ColorController extends AbstractReferencesController
                 'entityId' => $elem->getId(),
                 'polish' => $elem->getPolish(),
                 'german' => $elem->getGerman(),
-                'metallic' => $elem->getMetallic() ? '<div class="text-center"><i class="fas fa-check fa-2x"></i></div>' : '',
-                'baseColor' => null != $elem->getBaseColor() ? $elem->getBaseColor()->getTitle() : ''
-            ];
+                ];
         }
 
         return JsonResponse::create([

@@ -1,0 +1,15 @@
+<a href="{{ path("admin_references_basecolor_new") }}" class="btn btn-primary" type="button">{{ 'Add new '|trans ~ 'Base color'|capitalize|trans }}</a>
+<a href="{{ path("admin_references_color_new") }}" class="btn btn-primary" type="button">{{ 'Add new '|trans ~ 'Color description'|capitalize|trans }}</a>
+
+<div class="color-links">
+    {% if "admin_references_basecolor_index" == app.request.attributes.get('_route') %}
+        {{ 'Farbe'|trans }}
+    {% else %}
+        <a href="{{ path('admin_references_basecolor_index') }}">{{ 'Farbe'|trans }}</a>
+    {% endif %}
+    {% if "admin_references_color_index" == app.request.attributes.get('_route') %}
+        {{ 'Farbe Beschreibung'|trans }}
+    {% else %}
+        <a href="{{ path('admin_references_color_index') }}">{{ 'Farbe Beschreibung'|trans }}</a>
+    {% endif %}
+</div>

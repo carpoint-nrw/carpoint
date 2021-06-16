@@ -53,7 +53,7 @@ $(() => {
   $('#button-delete-item').click(() => {
     $datatable.ajax.url(deleteRoute).load();
   });
-
+  
   function columns() {
     let $result = [
       {
@@ -80,6 +80,11 @@ $(() => {
         $result.push({'name': 'german', 'data': 'german'});
         $result.push({'name': 'metallic', 'data': 'metallic'});
         $result.push({'name': 'baseColor', 'data': 'baseColor'});
+
+        break;
+      case 'basecolor':
+        $result.push({'name': 'polish', 'data': 'polish'});
+        $result.push({'name': 'german', 'data': 'german'});
         break;
       case 'version':
         $result.push({'name': 'brand', 'data': 'brand'});

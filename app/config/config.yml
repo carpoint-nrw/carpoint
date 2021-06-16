@@ -39,6 +39,7 @@ twig:
     model_relative_path: '%model_relative_path%'
     car_files_relative_path: '%car_files_relative_path%'
     car_invoice_relative_path: '%car_invoice_relative_path%'
+    database: '%database_name%'
 
 # Doctrine Configuration
 doctrine:

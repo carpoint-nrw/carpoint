@@ -19,8 +19,6 @@
                         <th>{% trans %}Delete{% endtrans %}</th>
                         <th>{% trans %}Color Polish{% endtrans %}</th>
                         <th>{% trans %}Color German{% endtrans %}</th>
-                        <th>{% trans %}Metallic{% endtrans %}</th>
-                        <th>{% trans %}Base Color{% endtrans %}</th>
                     </tr>
                     </thead>
                 </table>
@@ -42,7 +40,7 @@
 			window.deleteRoute = '{{ path(deleteRoute) }}';
 			window.userLocale = '{{ app.user.locale }}';
 			window.entity = '{{ entity|capitalize|trans }}';
-			window.type = 'color';
+			window.type = 'basecolor';
     </script>
     <script src="{{ asset('js/datatables.min.js') }}"></script>
     <script src="{{ asset('bundles/admin/js/references/color.js') }} " type="module"></script>

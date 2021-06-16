@@ -256,4 +256,21 @@
 .sort-year-month {
     min-width: 120px;
 }
+
+.color-links {
+    //position: relative;
+    //top: 1.75em;
+    //left: 16em;
+    color: #337ab7;
+}
+
+.color-links a {
+    text-decoration: underline;
+    padding: 0 0.5em;
+}
+
+.fa, .fas{
+    margin: 3px 0 0 0;
+    font-size: 19px !important;
+}
 /* Custom END */

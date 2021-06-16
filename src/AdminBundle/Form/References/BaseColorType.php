@@ -17,7 +17,7 @@ use Symfony\Component\Form\FormBuilderInterface;
  *
  * @package AdminBundle\Form\References
  */
-class ColorType extends AbstractType
+class BaseColorType extends AbstractType
 {
     /**
      * Builds the form.
@@ -39,17 +39,6 @@ class ColorType extends AbstractType
         $builder
             ->add('polish', null, ['required' => false])
             ->add('german', null, ['required' => false])
-            ->add('metallic', null, ['required' => false])
-            ->add('baseColor',  EntityType::class, [
-                'required' => true,
-                'class' => BaseColor::class,
-                'placeholder' => ' -- ',
-                'query_builder' => function (EntityRepository $er) {
-                        return $er->createQueryBuilder('c')->orderBy('c.german', 'ASC');
-                    },
-                'choice_label' =>  function (?BaseColor $entity) {
-                        return $entity ? $entity->getGerman() . ' / ' . $entity->getPolish()  : '';
-                    },
-                 ]);
+            ;
     }
 }
