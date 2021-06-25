@@ -46,12 +46,18 @@
         {{ form_widget(form.vinNumber) }}
     </div>
     <div class="form-group col-md-2">
-        <label for="colorPolish">{% trans %}Color Polish F.{% endtrans %}</label>
-        {{ form_widget(form.colorPolish) }}
+        <label for="baseColor">{% trans %}Color{% endtrans %}</label>
+        {{ form_widget(form.baseColor) }}
     </div>
     <div class="form-group col-md-2">
-        <label for="colorGerman">{% trans %}Color German F.{% endtrans %}</label>
+        <label for="colorDescription">{% trans %}Color description{% endtrans %}</label>
+        {{ form_widget(form.colorDescription) }}
+        <span style="display:none;">
         {{ form_widget(form.colorGerman) }}
+        {{ form_widget(form.colorPolish) }}
+        </span>
+        {{ form_widget(form.colorMetallic) }}
+    
     </div>
 </div>
 <div class="row">

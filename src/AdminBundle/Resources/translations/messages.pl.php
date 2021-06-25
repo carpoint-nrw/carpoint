@@ -86,6 +86,8 @@ return [
     'Version' => 'Wersja',
     'Color Polish' => 'Kolor',
     'Color German' => 'Farbe',
+    'Color' => 'Farbe',
+    'Color description' => 'Opis koloru',
     'Complectation Polish' => 'Opcje',
     'Complectation German' => 'Sonderausstattung',
     'Standart complectation' => 'Specyfikacje',

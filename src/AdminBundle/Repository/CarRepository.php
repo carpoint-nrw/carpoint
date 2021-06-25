@@ -71,6 +71,7 @@ class CarRepository extends EntityRepository
         array  $columnSearch = [],
                $addedType = null
     ): array {
+
         $query = $this->createQueryBuilder('car');
 
         foreach (self::JOINED_TABLE as $table) {

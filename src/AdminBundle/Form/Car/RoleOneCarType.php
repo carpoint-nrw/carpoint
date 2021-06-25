@@ -4,7 +4,11 @@ namespace AdminBundle\Form\Car;
 
 use AdminBundle\Enum\CarShowPrices;
 use AdminBundle\Enum\UserRoleEnum;
+use AdminBundle\Repository\References\BaseColorRepository;
+use AdminBundle\Repository\References\ColorRepository;
+use AdminBundle\Entity\References\BaseColor;
 use Doctrine\ORM\EntityRepository;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -91,20 +95,53 @@ class RoleOneCarType extends AbstractCarType
                 },
             ])
             ->add('carCondition', ChoiceType::class, $this->getCarCondition($builder, UserRoleEnum::ROLE_ADMIN_1))
+                        
             ->add('colorPolish', null, [
                 'required' => false,
                 'choice_label' => 'polish',
-                'query_builder' => function (EntityRepository $er) {
-                    return $er->createQueryBuilder('u')->orderBy('u.polish', 'ASC');
+                'query_builder' => function (ColorRepository $er) use($options) {
+                    $baseColor = 0;
+                    if(null !== $options['data']->getBaseColor()){
+                        $baseColor = $options['data']->getBaseColor()->getId();
+                    }
+                    return $er->getQueryByBaseColor($baseColor);
                 },
             ])
             ->add('colorGerman', null, [
                 'required' => false,
                 'choice_label' => 'german',
-                'query_builder' => function (EntityRepository $er) {
+                'query_builder' => function (ColorRepository $er) use($options) {
+                    $baseColor = 0;
+                    if(null !== $options['data']->getBaseColor()){
+                        $baseColor = $options['data']->getBaseColor()->getId();
+                    }
+                    return $er->getQueryByBaseColor($baseColor);
+                },
+            ])   
+
+            ->add('colorDescription', null, [
+                'required' => false,
+                'choice_label' => 'title',
+                'query_builder' => function (ColorRepository $er) use($options) {
+                    $baseColor = 0;
+                    if(null !== $options['data']->getBaseColor()){
+                        $baseColor = $options['data']->getBaseColor()->getId();
+                    }
+                    return $er->getQueryByBaseColor($baseColor);
+                },
+            ])                        
+            ->add('baseColor', EntityType::class, [
+                'class' => BaseColor::class,
+                'required' => false,
+                'choice_label' => 'title',
+                'query_builder' => function (BaseColorRepository $er) {
                     return $er->createQueryBuilder('u')->orderBy('u.german', 'ASC');
                 },
             ])
+            ->add('colorMetallic', null, [
+                'required' => false,
+                'label' => 'Metallic',
+            ])                        
             ->add('standartComplectationPolish', null, ['required' => false, 'attr' => ['readonly' => 'readonly']])
             ->add('standartComplectationGerman', null, ['required' => false, 'attr' => ['readonly' => 'readonly']])
             ->add('complectationPolish', null, ['required' => false])

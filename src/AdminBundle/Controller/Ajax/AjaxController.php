@@ -4,6 +4,7 @@ namespace AdminBundle\Controller\Ajax;
 
 use AdminBundle\Entity\Car;
 use AdminBundle\Entity\CarFileType;
+use AdminBundle\Entity\References\Color;
 use AdminBundle\Entity\References\Model;
 use AdminBundle\Entity\References\Place;
 use AdminBundle\Entity\References\StandartComplectation;
@@ -82,6 +83,35 @@ class AjaxController extends Controller
                 'id' => $version->getId(),
                 'polish' => $version->getPolish(),
                 'german' => $version->getGerman(),
+            ];
+            $data[] = $oneModel;
+        }
+
+
+        return JsonResponse::create($data);
+    }
+        
+    /**
+     * @Route("/get-color-description")
+     *
+     * @param Request $request A Request instance.
+     *
+     * @return JsonResponse
+     */
+    public function getColorDescription(Request $request): JsonResponse
+    {
+        $baseColor = $request->query->get('baseColor');
+        $em = $this->getDoctrine()->getManager();
+
+        $colors = $em->getRepository(Color::class)->getByBaseColor($baseColor);
+
+        $data = [];
+        foreach ($colors as $color) {
+            $oneModel = [
+                'id' => $color->getId(),
+                'polish' => $color->getPolish(),
+                'german' => $color->getGerman(),
+                'title' => $color->getTitle(),
             ];
             $data[] = $oneModel;
         }

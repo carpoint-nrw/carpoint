@@ -243,7 +243,38 @@ $(() => {
       $('#zakupBrut').val('');
     }
   }
-
+  
+    let $baseColor = $('#baseColor');
+    let $colorPolish = $('#colorPolish');
+    let $colorGerman = $('#colorGerman');
+    let $colorDescription = $('#colorDescription');
+  
+    $baseColor.change(() => {
+        $colorPolish.empty();
+        $colorGerman.empty();
+        $colorDescription.empty();
+        $.ajax({
+          method: 'GET',
+          url: ajaxGetColorDescription,
+          data: {'baseColor': $('#baseColor').val()},
+        })
+          .done((data) => {
+            data.forEach((value) => {
+              let $germanOption = new Option(value.german, value.id, false, false);
+              $colorGerman.append($germanOption);
+              let $polishOption = new Option(value.polish, value.id, false, false);
+              $colorPolish.append($polishOption);
+              let $colorOption = new Option(value.title, value.id, false, false);
+              $colorDescription.append($colorOption);
+            });
+          })
+          .fail(() => {
+            console.log('fail');
+          });
+  });
+  $('#colorDescription').change(() => {
+    $('#colorGerman').val($('#colorDescription').val());
+  });
   $('#colorPolish').change(() => {
     $('#colorGerman').val($('#colorPolish').val());
   });

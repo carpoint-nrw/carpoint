@@ -55,6 +55,27 @@ class ColorRepository extends AbstractReferencesRepository
         
     }
     
+     public function getByBaseColor($baseColor): array {
+        $query = $this->createQueryBuilder('c');
+        $query
+            ->where('c.baseColor = :baseColor')
+            ->setParameter('baseColor', $baseColor);
+        
+        return $query->getQuery()->getResult();
+        
+    }
+    
+    public function getQueryByBaseColor($baseColor) {
+        $query = $this->createQueryBuilder('c');
+        $query
+            ->where('c.baseColor = :baseColor')
+            ->setParameter('baseColor', $baseColor)
+            ->orderBy('c.german', 'ASC');
+        
+        return $query;
+        
+    }
+    
     public function findByBaseColor($baseColor): array {
         $query = $this->createQueryBuilder('c');
         $query

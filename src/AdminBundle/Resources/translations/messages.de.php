@@ -91,6 +91,7 @@ return [
     'Color Polish' => 'Kolor',
     'Color German' => 'Farbe',
     'Color' => 'Farbe',
+    'Color description' => 'Farbe Beschreibung',
     'Complectation Polish' => 'Opcje',
     'Complectation German' => 'Sonderausstattung',
     'Standart complectation' => 'Serienausstattung',

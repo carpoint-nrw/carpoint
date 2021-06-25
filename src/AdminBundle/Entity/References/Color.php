@@ -147,6 +147,14 @@ class Color
     }
     
     /**
+     * @return string
+     */
+    public function getTitle(): string
+    {
+        return $this->german . ' / ' . $this->polish ;
+    }
+    
+    /**
      * @return string|null
      */
     public function getMetallic():? bool

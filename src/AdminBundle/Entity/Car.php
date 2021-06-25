@@ -6,6 +6,7 @@ use AdminBundle\Entity\References\BodyType;
 use AdminBundle\Entity\References\Brand;
 use AdminBundle\Entity\References\CarStatus;
 use AdminBundle\Entity\References\ClientStatus;
+use AdminBundle\Entity\References\BaseColor;
 use AdminBundle\Entity\References\Color;
 use AdminBundle\Entity\References\Customer;
 use AdminBundle\Entity\References\Forwarder;
@@ -949,6 +950,29 @@ class Car
      * @ORM\JoinColumn(nullable=true, onDelete="SET NULL")
      */
     protected $colorGerman;
+    
+    /**
+     * @var BaseColor
+     * *
+     * @ORM\ManyToOne(targetEntity="AdminBundle\Entity\References\BaseColor", inversedBy="car")
+     * @ORM\JoinColumn(nullable=true, onDelete="SET NULL")
+     */
+    protected $baseColor;
+    
+    /**
+     * @var Color
+     *
+     * @ORM\ManyToOne(targetEntity="AdminBundle\Entity\References\Color", inversedBy="car")
+     * @ORM\JoinColumn(nullable=true, onDelete="SET NULL")
+     */
+    protected $colorDescription;
+
+    /**
+     * @var bool
+     *
+     * @ORM\Column(type="boolean", nullable=true, options={"default" : 0})
+     */
+    protected $colorMetallic;
 
     /**
      * @var Admin
@@ -1216,6 +1240,49 @@ class Car
 
         return $this;
     }
+    
+    /**
+     * @return Color|null
+     */
+    public function getColorDescription():? Color
+    {
+        return $this->colorDescription;
+    }
+
+    /**
+     * @param Color|null $colorDescription
+     *
+     * @return static
+     */
+    public function setColorDescription($colorDescription)
+    {
+        $this->colorDescription = $colorDescription;
+
+        return $this;
+    }
+
+        
+    /**
+     * @return bool
+     */
+    public function getColorMetallic():? bool
+    {
+        return $this->colorMetallic;
+    }
+
+    /**
+     * @param Color|null $colorMetallic
+     *
+     * @return static
+     */
+    public function setColorMetallic($colorMetallic)
+    {
+        $this->colorMetallic = $colorMetallic;
+
+        return $this;
+    }
+
+
 
     /**
      * @return Color|null
@@ -1257,6 +1324,26 @@ class Car
         return $this;
     }
 
+    /**
+     * @return Color|null
+     */
+    public function getBaseColor():? BaseColor
+    {
+        return $this->baseColor;
+    }
+
+    /**
+     * @param Color|null $baseColor
+     *
+     * @return static
+     */
+    public function setBaseColor($baseColor)
+    {
+        $this->baseColor = $baseColor;
+
+        return $this;
+    }
+    
     /**
      * @return string|null
      */
