@@ -78,7 +78,6 @@ $(() => {
       case 'color':
         $result.push({'name': 'polish', 'data': 'polish'});
         $result.push({'name': 'german', 'data': 'german'});
-        $result.push({'name': 'metallic', 'data': 'metallic'});
         $result.push({'name': 'baseColor', 'data': 'baseColor'});
 
         break;

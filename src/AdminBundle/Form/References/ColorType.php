@@ -39,7 +39,6 @@ class ColorType extends AbstractType
         $builder
             ->add('polish', null, ['required' => false])
             ->add('german', null, ['required' => false])
-            ->add('metallic', null, ['required' => false])
             ->add('baseColor',  EntityType::class, [
                 'required' => true,
                 'class' => BaseColor::class,
