@@ -110,7 +110,7 @@ class BaseColor
     
     public function getTitle()
     {
-        return $this->polish . ' / ' . $this->german;
+        return $this->german . ' / ' . $this->polish ;
     }
 
     /**
